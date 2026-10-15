@@ -208,17 +208,40 @@ footer{background:var(--acero);color:color-mix(in srgb,var(--sobre-acero) 65%,tr
 </style>
 <style>img{max-width:100%}[hidden]{display:none!important}body{margin:0}</style>
 <style>
-.servicio h3{font-size:2rem}
 .link-cinta{margin-top:auto;padding-top:10px;font-weight:700;color:var(--cinta);text-decoration:none;font-size:.95rem}
-.link-cinta:hover{text-decoration:underline}
 .imp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--acero-2)}
-.imp{background:var(--acero);padding:34px 30px 36px;display:flex;flex-direction:column;gap:14px;align-items:flex-start;min-width:0}
+.imp{background:var(--acero);color:var(--sobre-acero);padding:34px 30px 36px;display:flex;flex-direction:column;gap:14px;align-items:flex-start;min-width:0}
 .imp .mono{font-size:.75rem;letter-spacing:.14em;color:var(--cinta);text-transform:uppercase}
 .imp h3{font-size:2.4rem}
 .imp p{color:color-mix(in srgb,var(--sobre-acero) 76%,transparent)}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px}
 .chips span{font-family:var(--f-mono);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;border:1px solid color-mix(in srgb,var(--sobre-acero) 35%,transparent);padding:6px 10px}
+.chips.claro{margin-top:28px}
+.chips.claro span{border-color:var(--linea);color:var(--tinta);background:var(--hormigon)}
 @media (max-width:760px){.imp-grid{grid-template-columns:1fr}}
+.hero2{border-bottom:1px solid var(--linea);padding-block:72px 80px;background:linear-gradient(var(--linea) 1px,transparent 1px) 0 0/100% 80px,linear-gradient(90deg,var(--linea) 1px,transparent 1px) 0 0/80px 100%;background-color:var(--hormigon)}
+.hero2 h1{font-size:clamp(3.6rem,11vw,8.4rem);margin:18px 0 20px}
+.hero2 h1 em{font-style:normal;background:var(--cinta);color:var(--cinta-tinta);padding:0 .12em}
+.hero2 .hero-lead{max-width:40em}
+.arbol{margin-top:56px}
+.raiz{margin:0 auto;width:max-content;max-width:100%;background:var(--tinta);color:var(--hormigon);padding:16px 30px;text-align:center;position:relative;display:flex;flex-direction:column;gap:4px}
+.raiz .mono{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--cinta)}
+.raiz b{font-family:var(--f-display);font-weight:900;font-size:1.9rem;text-transform:uppercase;letter-spacing:.02em;line-height:1}
+.raiz::after{content:"";position:absolute;left:50%;top:100%;width:2px;height:28px;margin-left:-1px;background:var(--tinta)}
+.ramas{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:28px;padding-top:28px;position:relative}
+.ramas::before{content:"";position:absolute;top:0;left:calc((100% - 40px)/6);right:calc((100% - 40px)/6);height:2px;background:var(--tinta)}
+.rama{position:relative;border:2px solid var(--tinta);background:var(--losa);padding:24px 22px;text-decoration:none;display:flex;flex-direction:column;gap:10px;min-width:0;transition:border-color .2s}
+.rama::before{content:"";position:absolute;bottom:100%;left:50%;width:2px;height:30px;margin-left:-1px;background:var(--tinta)}
+.rama:hover{border-color:var(--cinta)}
+.rama svg{width:44px;height:44px}
+.rama b{font-family:var(--f-display);font-weight:800;font-size:1.6rem;text-transform:uppercase;line-height:1}
+.rama span{color:var(--gris);font-size:.95rem}
+.rama em{font-style:normal;font-family:var(--f-mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;margin-top:auto;padding-top:6px}
+@media (max-width:760px){.ramas{grid-template-columns:1fr;padding-top:20px;margin-top:28px}.ramas::before{display:none}.rama::before{height:22px}.rama:first-child::before{height:30px}}
+.rama-head{display:flex;flex-direction:column;gap:14px;max-width:46em;margin-bottom:44px}
+.rama-head h2{font-size:clamp(2.4rem,5.5vw,4.4rem)}
+.rama-head>p:last-child{color:var(--gris);font-size:1.05rem}
+.rama-sec.alt{background:var(--losa);border-block:1px solid var(--linea)}
 </style>
 </head>
 <body>
@@ -235,79 +258,53 @@ footer{background:var(--acero);color:color-mix(in srgb,var(--sobre-acero) 65%,tr
 </a>
 <nav class="nav-links" aria-label="Principal">
 <a href="#grupo">El grupo</a>
-<a href="#empresas">Empresas</a>
-<a href="#desarrollos">Desarrollos</a>
+<a href="#desarrollo">Desarrollo inmobiliario</a>
+<a href="#construcciones">Construcciones</a>
 <a href="#importaciones">Importaciones</a>
 <a href="#contacto">Contacto</a>
 </nav>
-<a class="btn btn-cinta" href="#desarrollos">Ver <span>desarrollos</span></a>
+<a class="btn btn-cinta" href="#contacto">Contacto</a>
 </div>
 </header>
 <main id="inicio">
-<section class="hero" style="padding-block:0">
-<div class="wrap hero-grid">
-<div class="hero-copy">
-<p class="eyebrow">BVC Inversiones · Desarrollo inmobiliario · Cochabamba</p>
-<h1>Desarrollamos proyectos <em>inmobiliarios</em> propios.</h1>
-<p class="hero-lead">El desarrollo inmobiliario es el corazón de BVC Inversiones. Invertimos en el terreno, desarrollamos el proyecto, lo construimos con nuestra propia constructora y lo llevamos a la venta. Como negocio complementario, BVC Importaciones trae materiales de obra fina y vehículos eléctricos.</p>
-<div class="hero-cta">
-<a class="btn btn-cinta" href="#desarrollos">Ver nuestros desarrollos</a>
-<a class="btn btn-linea" href="#empresas">Conocer el grupo</a>
+<section class="hero2">
+<div class="wrap">
+<p class="eyebrow">Grupo de inversión · Cochabamba, Bolivia</p>
+<h1>BVC <em>Inversiones</em></h1>
+<p class="hero-lead">BVC Inversiones es el grupo fundado por el Ing. Cesar Barrera, su dueño e inversionista principal. Desde aquí se invierte, se dirige y nacen nuestras tres empresas.</p>
+<div class="arbol" aria-label="Estructura del grupo">
+<div class="raiz"><span class="mono">Grupo</span><b>BVC Inversiones</b></div>
+<div class="ramas">
+<a class="rama" href="#desarrollo">
+<svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="16" y="6" width="24" height="44"/><path d="M22 14h4M30 14h4M22 22h4M30 22h4M22 30h4M30 30h4M22 38h4M30 38h4M6 50h44"/></svg>
+<b>Desarrollo Inmobiliario BVC</b>
+<span>Proyectos inmobiliarios propios: del terreno a la venta.</span>
+<em>Ver rama →</em>
+</a>
+<a class="rama" href="#construcciones">
+<svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 16h44M6 30h44M6 44h44M14 10v40M42 10v40M28 16v28"/></svg>
+<b>BVC Construcciones</b>
+<span>Construcción de los proyectos del grupo, con equipo propio.</span>
+<em>Ver rama →</em>
+</a>
+<a class="rama" href="#importaciones">
+<svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="6" y="18" width="30" height="22"/><path d="M36 24h8l6 8v8H36M14 44a4 4 0 1 0 0 .1M42 44a4 4 0 1 0 0 .1"/></svg>
+<b>BVC Importaciones</b>
+<span>Materiales de obra fina y vehículos eléctricos 0 km.</span>
+<em>Ver rama →</em>
+</a>
 </div>
-<div class="hero-meta">
-<div><b>6</b>Años desarrollando</div>
-<div><b>100%</b>Proyectos propios</div>
-<div><b>2027</b>Entrega de Torre Toscana</div>
-</div>
-</div>
-<div class="elev" aria-label="Elevación de un edificio de 10 niveles con cotas">
-<svg viewBox="0 0 360 600" role="img">
-<title>Elevación de edificio con niveles</title>
-<g font-family="IBM Plex Mono, monospace" font-size="10" fill="var(--gris)">
-<rect x="90" y="40" width="170" height="540" fill="var(--losa)" stroke="var(--tinta)" stroke-width="2"/>
-<g stroke="var(--tinta)" stroke-width="1.2">
-<line x1="90" y1="94" x2="260" y2="94"/><line x1="90" y1="148" x2="260" y2="148"/><line x1="90" y1="202" x2="260" y2="202"/><line x1="90" y1="256" x2="260" y2="256"/><line x1="90" y1="310" x2="260" y2="310"/><line x1="90" y1="364" x2="260" y2="364"/><line x1="90" y1="418" x2="260" y2="418"/><line x1="90" y1="472" x2="260" y2="472"/><line x1="90" y1="526" x2="260" y2="526"/>
-</g>
-<g fill="var(--acero)" opacity=".9">
-<rect x="104" y="104" width="40" height="34"/><rect x="155" y="104" width="40" height="34"/><rect x="206" y="104" width="40" height="34"/>
-<rect x="104" y="158" width="40" height="34"/><rect x="155" y="158" width="40" height="34"/><rect x="206" y="158" width="40" height="34"/>
-<rect x="104" y="212" width="40" height="34"/><rect x="155" y="212" width="40" height="34"/><rect x="206" y="212" width="40" height="34"/>
-<rect x="104" y="266" width="40" height="34"/><rect x="155" y="266" width="40" height="34"/><rect x="206" y="266" width="40" height="34"/>
-<rect x="104" y="320" width="40" height="34"/><rect x="155" y="320" width="40" height="34"/><rect x="206" y="320" width="40" height="34"/>
-<rect x="104" y="374" width="40" height="34"/><rect x="155" y="374" width="40" height="34"/><rect x="206" y="374" width="40" height="34"/>
-<rect x="104" y="428" width="40" height="34"/><rect x="155" y="428" width="40" height="34"/><rect x="206" y="428" width="40" height="34"/>
-<rect x="104" y="482" width="40" height="34"/><rect x="155" y="482" width="40" height="34"/><rect x="206" y="482" width="40" height="34"/>
-</g>
-<rect x="104" y="58" width="90" height="10" fill="var(--cinta)"/>
-<rect x="206" y="50" width="40" height="36" fill="none" stroke="var(--tinta)" stroke-width="1.2"/>
-<rect x="140" y="540" width="70" height="40" fill="var(--acero)"/>
-<line x1="40" y1="580" x2="320" y2="580" stroke="var(--tinta)" stroke-width="2"/>
-<g stroke="var(--gris)" stroke-width="1">
-<line x1="270" y1="40" x2="300" y2="40"/><line x1="270" y1="580" x2="300" y2="580"/>
-<line x1="292" y1="40" x2="292" y2="580"/>
-</g>
-<text x="300" y="44">N +32.40</text>
-<text x="300" y="584">N ±0.00</text>
-<g text-anchor="end">
-<text x="82" y="70">TERRAZA</text>
-<text x="82" y="125">P8</text><text x="82" y="179">P7</text><text x="82" y="233">P6</text><text x="82" y="287">P5</text>
-<text x="82" y="341">P4</text><text x="82" y="395">P3</text><text x="82" y="449">P2</text><text x="82" y="503">P1</text>
-<text x="82" y="560">PB</text>
-</g>
-<text x="90" y="598">EJE A</text><text x="230" y="598">EJE C</text>
-</g>
-</svg>
 </div>
 </div>
 </section>
 <section id="grupo">
 <div class="wrap historia">
-<div class="anio"><small>Invirtiendo desde</small>2020</div>
+<div class="anio"><small>Desde</small>2020</div>
 <div class="about-body">
-<p class="eyebrow">Nuestra historia</p>
-<p class="about-quote">Un grupo que nació <span>construyendo lo propio.</span></p>
-<p>BVC Inversiones fue fundado por el Ing. Cesar Barrera, su dueño e inversionista principal. Empezamos hace seis años desarrollando y construyendo casas propias para la venta. Hoy desarrollamos edificios de departamentos en Cochabamba y sumamos una empresa de importación.</p>
-<p>Cada empresa del grupo trabaja con capital propio y bajo una misma dirección. No construimos para terceros: nuestra capacidad de obra está dedicada a nuestros propios desarrollos, y así controlamos la calidad, el costo y el plazo de cada uno.</p>
+<p class="eyebrow">El grupo</p>
+<p class="about-quote">Un grupo de inversión <span>con empresas propias.</span></p>
+<p>BVC Inversiones nació hace seis años desarrollando y construyendo casas propias para la venta. Con el tiempo el grupo creció en ramas: hoy desarrolla edificios de departamentos, los construye con su propia constructora e importa materiales y vehículos.</p>
+<p>Cada rama trabaja bajo la misma dirección y con la inversión del grupo. Por eso controlamos la calidad, el costo y el plazo de todo lo que hacemos.</p>
 <div class="valores">
 <div><h3>Responsabilidad</h3><p>Cumplimos plazos y lo que firmamos.</p></div>
 <div><h3>Calidad</h3><p>Hacemos cada proyecto como si fuera para nosotros, porque lo es.</p></div>
@@ -316,65 +313,12 @@ footer{background:var(--acero);color:color-mix(in srgb,var(--sobre-acero) 65%,tr
 </div>
 </div>
 </section>
-<section class="acero" id="empresas">
+<section class="rama-sec" id="desarrollo">
 <div class="wrap">
-<div class="sec-head">
-<div><p class="eyebrow">Nuestro grupo</p><h2>Las empresas BVC</h2></div>
-<p>El centro del grupo es el desarrollo inmobiliario propio. La constructora lo hace realidad y la importadora es un negocio complementario.</p>
-</div>
-<div class="servicios">
-<div class="servicio">
-<span class="mono">Actividad principal</span>
-<h3>Desarrollo Inmobiliario BVC</h3>
-<p>Elegimos el terreno, definimos el producto y llevamos cada proyecto hasta la venta.</p>
-<ul><li>Compra y estudio de terrenos</li><li>Diseño de tipologías y aprobación de planos</li><li>Venta directa e inmobiliarias asociadas</li><li>Plan de pagos y crédito directo</li></ul>
-<a class="link-cinta" href="#desarrollos">Ver desarrollos →</a>
-</div>
-<div class="servicio">
-<span class="mono">Construcción propia</span>
-<h3>BVC Construcciones</h3>
-<p>Construimos nuestros propios desarrollos con equipo propio y supervisión de ingeniería.</p>
-<ul><li>Estructuras de hormigón armado</li><li>Obra fina y acabados</li><li>Instalaciones eléctricas, sanitarias y de gas</li><li>Áreas sociales: piscinas y terrazas</li></ul>
-<a class="link-cinta" href="#obras">Ver tipos de obra →</a>
-</div>
-<div class="servicio">
-<span class="mono">Negocio complementario</span>
-<h3>BVC Importaciones</h3>
-<p>Importamos materiales de obra fina para construcción y vehículos eléctricos 0 km.</p>
-<ul><li>Pisos y revestimientos</li><li>Griferías, puertas y chapas</li><li>Artefactos eléctricos</li><li>Vehículos eléctricos 0 km</li></ul>
-<a class="link-cinta" href="#importaciones">Ver importaciones →</a>
-</div>
-</div>
-<div class="propio"><b>Un solo grupo, toda la cadena.</b><span>Inversión, desarrollo, construcción, materiales y venta bajo la misma dirección.</span></div>
-</div>
-</section>
-<section id="obras">
-<div class="wrap">
-<div class="sec-head">
-<div><p class="eyebrow">Desarrollo y construcción</p><h2>Tipos de desarrollo</h2></div>
-<p>Proyectos residenciales propios, pensados para vivir o para invertir y alquilar.</p>
-</div>
-<div class="tipos t3">
-<div class="tipo">
-<svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2"><rect x="16" y="6" width="24" height="44"/><path d="M22 14h4M30 14h4M22 22h4M30 22h4M22 30h4M30 30h4M22 38h4M30 38h4M6 50h44"/></svg>
-<h3>Desarrollos verticales</h3><p>Edificios de departamentos en zonas residenciales consolidadas, con áreas sociales en el último piso.</p>
-</div>
-<div class="tipo">
-<svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="20" width="18" height="30"/><rect x="32" y="20" width="18" height="30"/><path d="M6 20l9-10 9 10M32 20l9-10 9 10M4 50h48"/></svg>
-<h3>Condominios</h3><p>Bloques residenciales con departamentos amplios para familias.</p>
-</div>
-<div class="tipo">
-<svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 26L28 10l20 16M12 24v26h32V24M24 50V36h8v14"/></svg>
-<h3>Viviendas</h3><p>Casas propias construidas para la venta, como las primeras obras del grupo.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="desarrollos" style="padding-top:0">
-<div class="wrap">
-<div class="sec-head">
-<div><p class="eyebrow">Desarrollo Inmobiliario BVC</p><h2>Nuestros desarrollos</h2></div>
-<p>Desarrollados y construidos por el grupo. Visita la obra y compra sobre algo que ya se ve.</p>
+<div class="rama-head">
+<p class="eyebrow">Rama de BVC Inversiones</p>
+<h2>Desarrollo Inmobiliario BVC</h2>
+<p>Invertimos en el terreno, diseñamos el proyecto y lo llevamos a la venta, directa y con inmobiliarias asociadas. Todos nuestros desarrollos son propios.</p>
 </div>
 <article class="dev-feature">
 <div class="dev-img">
@@ -469,22 +413,47 @@ footer{background:var(--acero);color:color-mix(in srgb,var(--sobre-acero) 65%,tr
 </div>
 </div>
 </section>
-<section class="acero" id="importaciones">
+<section class="rama-sec alt" id="construcciones">
 <div class="wrap">
-<div class="sec-head">
-<div><p class="eyebrow">BVC Importaciones</p><h2>Lo que importamos</h2></div>
-<p>Dos líneas de importación: materiales de obra fina para construcción y vehículos eléctricos 0 km.</p>
+<div class="rama-head">
+<p class="eyebrow">Rama de BVC Inversiones</p>
+<h2>BVC Construcciones</h2>
+<p>La constructora del grupo. Construye los proyectos que desarrolla BVC Inversiones, con equipo propio y supervisión de ingeniería en cada etapa.</p>
+</div>
+<div class="tipos t3">
+<div class="tipo">
+<svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2"><rect x="16" y="6" width="24" height="44"/><path d="M22 14h4M30 14h4M22 22h4M30 22h4M22 30h4M30 30h4M22 38h4M30 38h4M6 50h44"/></svg>
+<h3>Edificios</h3><p>Desarrollos verticales en zonas residenciales consolidadas, con áreas sociales en el último piso.</p>
+</div>
+<div class="tipo">
+<svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="20" width="18" height="30"/><rect x="32" y="20" width="18" height="30"/><path d="M6 20l9-10 9 10M32 20l9-10 9 10M4 50h48"/></svg>
+<h3>Condominios</h3><p>Bloques residenciales con departamentos amplios para familias.</p>
+</div>
+<div class="tipo">
+<svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 26L28 10l20 16M12 24v26h32V24M24 50V36h8v14"/></svg>
+<h3>Viviendas</h3><p>Casas construidas para la venta, como las primeras obras del grupo.</p>
+</div>
+</div>
+<div class="chips claro"><span>Estructuras de hormigón armado</span><span>Obra fina y acabados</span><span>Instalaciones eléctricas, sanitarias y de gas</span><span>Piscinas y terrazas</span></div>
+</div>
+</section>
+<section class="rama-sec" id="importaciones">
+<div class="wrap">
+<div class="rama-head">
+<p class="eyebrow">Rama de BVC Inversiones</p>
+<h2>BVC Importaciones</h2>
+<p>Importamos directamente dos líneas de producto: materiales de obra fina para construcción y vehículos eléctricos 0 km.</p>
 </div>
 <div class="imp-grid">
 <article class="imp">
-<span class="mono">Línea 01 · Obra fina</span>
+<span class="mono">Obra fina</span>
 <h3>Materiales de construcción</h3>
 <p>Los acabados que se ven y se usan todos los días en una vivienda.</p>
 <div class="chips"><span>Pisos</span><span>Revestimientos</span><span>Griferías</span><span>Puertas</span><span>Chapas</span><span>Artefactos eléctricos</span></div>
 <a class="btn btn-cinta" href="https://wa.me/59160744425?text=Hola%20BVC%20Importaciones%2C%20quiero%20informaci%C3%B3n%20de%20materiales%20de%20obra%20fina" target="_blank" rel="noopener">Consultar materiales</a>
 </article>
 <article class="imp">
-<span class="mono">Línea 02 · Movilidad eléctrica</span>
+<span class="mono">Movilidad eléctrica</span>
 <h3>Vehículos eléctricos 0 km</h3>
 <p>Vehículos eléctricos nuevos, importados directamente por el grupo.</p>
 <div class="chips"><span>0 km</span><span>100% eléctricos</span><span>Importación directa</span></div>
@@ -503,7 +472,7 @@ footer{background:var(--acero);color:color-mix(in srgb,var(--sobre-acero) 65%,tr
 </div>
 <section class="cita">
 <div class="wrap">
-<blockquote>Invertimos en lo que construimos y construimos lo que vendemos.</blockquote>
+<blockquote>Invertimos en lo que hacemos y hacemos lo que invertimos.</blockquote>
 <cite>Ing. Cesar Barrera · Fundador de BVC Inversiones</cite>
 </div>
 </section>
@@ -512,7 +481,7 @@ footer{background:var(--acero);color:color-mix(in srgb,var(--sobre-acero) 65%,tr
 <div>
 <p class="eyebrow">Contacto</p>
 <h2 style="margin-top:14px">Hablemos</h2>
-<p class="lead">¿Te interesa un departamento, un material de obra fina o un vehículo eléctrico? Escríbenos y te atiende el área que corresponde.</p>
+<p class="lead">¿Te interesa un departamento, un material de obra fina o un vehículo eléctrico? Escríbenos y te atiende la rama que corresponde.</p>
 <div class="hero-cta">
 <a class="btn btn-cinta" href="https://wa.me/59160744425?text=Hola%20BVC%20Inversiones%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener">Escribir por WhatsApp</a>
 </div>
@@ -528,8 +497,8 @@ footer{background:var(--acero);color:color-mix(in srgb,var(--sobre-acero) 65%,tr
 </main>
 <footer>
 <div class="wrap foot">
-<span>© 2026 BVC Inversiones · BVC Construcciones · Desarrollo Inmobiliario BVC · BVC Importaciones</span>
-<span style="display:flex;gap:22px"><a href="#empresas">Empresas</a><a href="#desarrollos">Desarrollos</a><a href="#importaciones">Importaciones</a></span>
+<span>© 2026 BVC Inversiones · Desarrollo Inmobiliario BVC · BVC Construcciones · BVC Importaciones</span>
+<span style="display:flex;gap:22px"><a href="#desarrollo">Desarrollo</a><a href="#construcciones">Construcciones</a><a href="#importaciones">Importaciones</a></span>
 </div>
 </footer>
 <a class="wa-float" href="https://wa.me/59160744425?text=Hola%20BVC%20Inversiones%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
