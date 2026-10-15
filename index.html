@@ -249,7 +249,62 @@ footer{background:var(--acero);color:color-mix(in srgb,var(--sobre-acero) 65%,tr
 .galeria img{width:100%;height:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:var(--linea)}
 .galeria.alta img{aspect-ratio:3/4}
 @media (max-width:760px){.galeria.g4{grid-template-columns:repeat(2,1fr)}}
+
+/* ===== Tema premium: fondo fijo, paneles de vidrio, negro y dorado ===== */
+:root:root:root{--hormigon:#0a0a0b;--losa:#141415;--tinta:#efebe2;--gris:#a39e94;--linea:#2c2a27;--acero:#0d0d0e;--acero-2:#26231f;--sobre-acero:#efebe2;--cinta:#c9a24c;--cinta-tinta:#0a0a0b;color-scheme:dark}
+html{background:#060606}
+body{background:transparent;color:var(--tinta)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.fondo{position:fixed;inset:0;z-index:-1;background:#060606 url(img/portada-inversiones.jpg) center 42%/cover no-repeat}
+.fondo::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,transparent 35%,rgba(0,0,0,.55) 100%)}
+@media (max-width:760px){.fondo{background-size:auto 62vh;background-position:center 30%}}
+header.top{background:transparent;border-bottom:1px solid transparent;backdrop-filter:none;transition:background .35s,border-color .35s}
+header.top.solid{background:rgba(8,8,8,.86);border-bottom-color:rgba(201,162,76,.25);backdrop-filter:blur(10px)}
+.nav-links a{color:#efebe2}
+.nav-links a:hover{color:var(--cinta)}
+.portada-hero{min-height:100svh;display:flex;align-items:flex-end;padding-block:0 6vh;background:linear-gradient(to bottom,transparent 55%,rgba(6,6,6,.85) 100%);border:0}
+.portada-inner{width:100%;display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px}
+.portada-inner .eyebrow{color:#cfc8b8}
+.portada-lead{font-size:clamp(1.05rem,2vw,1.35rem);color:#efebe2;max-width:36em;text-shadow:0 2px 12px rgba(0,0,0,.8)}
+.bajar{margin-top:18px;display:flex;flex-direction:column;align-items:center;gap:10px;text-decoration:none;font-family:var(--f-mono);font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--cinta)}
+.bajar i{width:22px;height:36px;border:1.5px solid var(--cinta);border-radius:12px;position:relative}
+.bajar i::after{content:"";position:absolute;left:50%;top:7px;width:3px;height:7px;margin-left:-1.5px;border-radius:2px;background:var(--cinta);animation:rueda 1.8s infinite}
+@keyframes rueda{0%{opacity:0;transform:translateY(0)}30%{opacity:1}100%{opacity:0;transform:translateY(12px)}}
+.panel{background:rgba(9,9,10,.9);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-top:1px solid rgba(201,162,76,.18)}
+.panel.alt{background:rgba(18,17,16,.92)}
+.panel.acero{background:rgba(5,5,6,.94)}
+.ventana{height:55vh;background:transparent}
+.ventana-cita{background:linear-gradient(to bottom,rgba(6,6,6,.25),rgba(6,6,6,.6));padding-block:22vh;border-top:1px solid rgba(201,162,76,.18)}
+.ventana-cita blockquote{color:#f4efe4;text-shadow:0 2px 18px rgba(0,0,0,.9);margin:0 auto;text-align:center}
+.ventana-cita cite{text-align:center;color:#cfc8b8}
+.rama-head.centro{align-items:center;text-align:center;margin-inline:auto}
+.rama-head h2,.sec-head h2{color:#f4efe4}
+.eyebrow{color:#b9b2a3}
+.raiz{background:#0a0a0b;color:#efebe2;border:1.5px solid var(--cinta);box-shadow:0 0 40px rgba(201,162,76,.12)}
+.raiz::after,.ramas::before,.rama::before{background:var(--cinta)}
+.rama{background:rgba(20,20,21,.9);border:1.5px solid #3a352d;transition:border-color .25s,transform .25s,box-shadow .25s}
+.rama:hover{border-color:var(--cinta);transform:translateY(-4px);box-shadow:0 14px 40px rgba(0,0,0,.5)}
+.rama svg{color:var(--cinta)}
+.rama em{color:var(--cinta)}
+.tipo{background:rgba(22,22,23,.9)}
+.tipo svg{color:var(--cinta)}
+.tipos{border-color:#2c2a27}
+.dev-feature,.otro{background:rgba(20,20,21,.92);border-color:#2c2a27}
+.otro-plan{background:#0d0d0e}
+.btn{border-color:#efebe2;color:#efebe2}
+.btn-cinta{color:var(--cinta-tinta)}
+.btn-linea:hover{background:#efebe2;color:#0a0a0b}
+.hero h1 em,.anio{color:#f4efe4}
+.anio{background:linear-gradient(180deg,#f1d792,#a9832f);-webkit-background-clip:text;background-clip:text;color:transparent}
+.marcas-row span{color:#8c867b}
+.galeria img{border:1px solid #2c2a27;transition:transform .5s}
+.galeria{overflow:hidden}
+.galeria img:hover{transform:scale(1.03)}
+.reveal{transition:opacity .8s ease,transform .8s ease}
+.js .reveal:not(.visto){opacity:0;transform:translateY(28px)}
+@media (prefers-reduced-motion:reduce){.js .reveal:not(.visto){opacity:1;transform:none}.bajar i::after{animation:none}}
 </style>
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 <header class="top">
@@ -269,13 +324,23 @@ footer{background:var(--acero);color:color-mix(in srgb,var(--sobre-acero) 65%,tr
 </div>
 </header>
 <main id="inicio">
-<section class="hero2">
-<div class="wrap">
-<img class="portada" src="img/portada-inversiones.jpg" alt="BVC Inversiones: edificio, gráfico de crecimiento y barco de importación" width="1800" height="750">
+<div class="fondo" aria-hidden="true"></div>
+<section class="portada-hero" id="portada">
+<div class="wrap portada-inner">
+<h1 class="sr-only">BVC Inversiones</h1>
 <p class="eyebrow">Grupo de inversión · Cochabamba, Bolivia</p>
-<h1>BVC <em>Inversiones</em></h1>
-<p class="hero-lead">BVC Inversiones es el grupo fundado por el Ing. Cesar Barrera, su dueño e inversionista principal. Desde aquí se invierte, se dirige y nacen nuestras tres empresas.</p>
-<div class="arbol" aria-label="Estructura del grupo">
+<p class="portada-lead">Desarrollo inmobiliario, construcción e importación bajo una misma dirección.</p>
+<a class="bajar" href="#estructura"><span>Conocer el grupo</span><i aria-hidden="true"></i></a>
+</div>
+</section>
+<section class="panel" id="estructura">
+<div class="wrap">
+<div class="rama-head centro reveal">
+<p class="eyebrow">Estructura del grupo</p>
+<h2>Una sola dirección, tres ramas</h2>
+<p>BVC Inversiones es el grupo fundado por el Ing. Cesar Barrera, su dueño e inversionista principal. Desde aquí se invierte, se dirige y nacen nuestras tres empresas.</p>
+</div>
+<div class="arbol reveal" aria-label="Estructura del grupo">
 <div class="raiz"><img src="img/logo-bvc.jpg" alt="" width="64" height="64"><span class="mono">Grupo</span><b>BVC Inversiones</b></div>
 <div class="ramas">
 <a class="rama" href="#desarrollo">
@@ -298,10 +363,9 @@ footer{background:var(--acero);color:color-mix(in srgb,var(--sobre-acero) 65%,tr
 </a>
 </div>
 </div>
-</div>
 </section>
-<section id="grupo">
-<div class="wrap historia">
+<section class="panel" id="grupo">
+<div class="reveal wrap historia">
 <div class="anio"><small>Desde</small>2020</div>
 <div class="about-body">
 <p class="eyebrow">El grupo</p>
@@ -316,14 +380,15 @@ footer{background:var(--acero);color:color-mix(in srgb,var(--sobre-acero) 65%,tr
 </div>
 </div>
 </section>
-<section class="rama-sec" id="desarrollo">
+<div class="ventana" aria-hidden="true"></div>
+<section class="panel rama-sec" id="desarrollo">
 <div class="wrap">
-<div class="rama-head">
+<div class="reveal rama-head">
 <p class="eyebrow">Rama de BVC Inversiones</p>
 <h2>Desarrollo Inmobiliario BVC</h2>
 <p>Invertimos en el terreno, diseñamos el proyecto y lo llevamos a la venta, directa y con inmobiliarias asociadas. Todos nuestros desarrollos son propios.</p>
 </div>
-<article class="dev-feature">
+<article class="reveal dev-feature">
 <div class="dev-img">
 <span class="dev-tag">En construcción · Losa 10</span>
 <svg viewBox="0 0 300 520" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
@@ -372,7 +437,7 @@ footer{background:var(--acero);color:color-mix(in srgb,var(--sobre-acero) 65%,tr
 </div>
 </div>
 </article>
-<div class="otros">
+<div class="reveal otros">
 <article class="otro">
 <div class="otro-plan">
 <svg viewBox="0 0 150 150" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -401,13 +466,13 @@ footer{background:var(--acero);color:color-mix(in srgb,var(--sobre-acero) 65%,tr
 </article>
 </div>
 <div class="galeria-head"><p class="eyebrow">Viviendas BVC · imágenes del proyecto</p></div>
-<div class="galeria g4">
+<div class="reveal galeria g4">
 <img src="img/casa-fachada.jpg" alt="Fachada de vivienda BVC" loading="lazy">
 <img src="img/casa-jardin.jpg" alt="Jardín y churrasquero de vivienda BVC" loading="lazy">
 <img src="img/casa-living.jpg" alt="Living con escalera de vivienda BVC" loading="lazy">
 <img src="img/casa-cocina.jpg" alt="Cocina y comedor de vivienda BVC" loading="lazy">
 </div>
-<div class="ventajas" style="margin-top:56px">
+<div class="reveal ventajas" style="margin-top:56px">
 <div class="ventaja"><h3>Obra real</h3><p>Compras sobre una obra en marcha que puedes visitar cuando quieras.</p></div>
 <div class="ventaja"><h3>Precio directo</h3><p>El desarrollador es el constructor: sin intermediarios en la obra.</p></div>
 <div class="ventaja"><h3>Plan de pagos propio</h3><p>Reserva, entrada desde el 20% y saldo contra entrega o crédito directo.</p></div>
@@ -415,14 +480,14 @@ footer{background:var(--acero);color:color-mix(in srgb,var(--sobre-acero) 65%,tr
 </div>
 </div>
 </section>
-<section class="rama-sec alt" id="construcciones">
+<section class="panel alt rama-sec" id="construcciones">
 <div class="wrap">
-<div class="rama-head">
+<div class="reveal rama-head">
 <p class="eyebrow">Rama de BVC Inversiones</p>
 <h2>BVC Construcciones</h2>
 <p>La constructora del grupo. Construye los proyectos que desarrolla BVC Inversiones, con equipo propio y supervisión de ingeniería en cada etapa.</p>
 </div>
-<div class="tipos t3">
+<div class="reveal tipos t3">
 <div class="tipo">
 <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2"><rect x="16" y="6" width="24" height="44"/><path d="M22 14h4M30 14h4M22 22h4M30 22h4M22 30h4M30 30h4M22 38h4M30 38h4M6 50h44"/></svg>
 <h3>Edificios</h3><p>Desarrollos verticales en zonas residenciales consolidadas, con áreas sociales en el último piso.</p>
@@ -437,7 +502,7 @@ footer{background:var(--acero);color:color-mix(in srgb,var(--sobre-acero) 65%,tr
 </div>
 </div>
 <div class="galeria-head"><p class="eyebrow">En obra · Torre Toscana</p></div>
-<div class="galeria g4 alta">
+<div class="reveal galeria g4 alta">
 <img src="img/toscana-obra-1.jpg" alt="Vaciado de losa con bomba de hormigón en Torre Toscana" loading="lazy">
 <img src="img/toscana-obra-2.jpg" alt="Equipo de BVC Construcciones en el vaciado de losa" loading="lazy">
 <img src="img/toscana-obra-3.jpg" alt="Losa alivianada lista para vaciado" loading="lazy">
@@ -446,14 +511,14 @@ footer{background:var(--acero);color:color-mix(in srgb,var(--sobre-acero) 65%,tr
 <div class="chips claro"><span>Estructuras de hormigón armado</span><span>Obra fina y acabados</span><span>Instalaciones eléctricas, sanitarias y de gas</span><span>Piscinas y terrazas</span></div>
 </div>
 </section>
-<section class="rama-sec" id="importaciones">
+<section class="panel rama-sec" id="importaciones">
 <div class="wrap">
-<div class="rama-head">
+<div class="reveal rama-head">
 <p class="eyebrow">Rama de BVC Inversiones</p>
 <h2>BVC Importaciones</h2>
 <p>Importamos directamente, para uso propio del grupo, materiales de obra fina para nuestras obras y vehículos eléctricos 0 km. No es una línea de venta al público.</p>
 </div>
-<div class="imp-grid">
+<div class="reveal imp-grid">
 <article class="imp">
 <span class="mono">Obra fina</span>
 <h3>Materiales de construcción</h3>
@@ -469,7 +534,7 @@ footer{background:var(--acero);color:color-mix(in srgb,var(--sobre-acero) 65%,tr
 </div>
 </div>
 </section>
-<div class="marcas">
+<div class="marcas panel alt">
 <div class="wrap">
 <p class="eyebrow">Marcas en nuestras obras</p>
 <div class="marcas-row" aria-label="Marcas">
@@ -477,13 +542,13 @@ footer{background:var(--acero);color:color-mix(in srgb,var(--sobre-acero) 65%,tr
 </div>
 </div>
 </div>
-<section class="cita">
+<section class="cita ventana-cita">
 <div class="wrap">
-<blockquote>Proyectos extraordinarios que se distinguen por ser agresivamente diferenciados y de profundo valor.</blockquote>
+<blockquote class="reveal">Proyectos extraordinarios que se distinguen por ser agresivamente diferenciados y de profundo valor.</blockquote>
 <cite>BVC Inversiones · Cochabamba, Bolivia</cite>
 </div>
 </section>
-<section class="acero contacto" id="contacto">
+<section class="panel acero contacto" id="contacto">
 <div class="wrap contacto-grid">
 <div>
 <p class="eyebrow">Contacto</p>
@@ -505,5 +570,10 @@ footer{background:var(--acero);color:color-mix(in srgb,var(--sobre-acero) 65%,tr
 <span style="display:flex;gap:22px"><a href="#desarrollo">Desarrollo</a><a href="#construcciones">Construcciones</a><a href="#importaciones">Importaciones</a></span>
 </div>
 </footer>
+<script>
+(function(){var h=document.querySelector('header.top');function f(){h.classList.toggle('solid',scrollY>40)}f();addEventListener('scroll',f,{passive:true});
+var els=document.querySelectorAll('.reveal');if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('visto')});return}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});els.forEach(function(e){io.observe(e)});})();
+</script>
 </body>
 </html>
