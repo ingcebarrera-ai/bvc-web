@@ -1,0 +1,511 @@
+PRUEBA<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>BVC Construcciones</title>
+<meta name="description" content="BVC Construcciones · Desarrolladora y constructora en Cochabamba, Bolivia. Desarrollamos, construimos y vendemos nuestros propios proyectos, como Torre Toscana.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: plano de obra — retícula de ejes, cotas de nivel y una elevación dibujada como portada; bandas de hormigón claro y acero oscuro */
+:root{
+--hormigon:#ecedea;
+--losa:#f7f7f5;
+--tinta:#15191d;
+--gris:#5b6168;
+--linea:#c9ccc8;
+--acero:#1c2833;
+--acero-2:#26343f;
+--sobre-acero:#e8ecef;
+--cinta:#e6a700;
+--cinta-tinta:#15191d;
+--f-display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+--f-body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+--f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+--max:1180px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+--hormigon:#121518;--losa:#191d21;--tinta:#e9ebe8;--gris:#9aa1a8;--linea:#2e353b;
+--acero:#0c1116;--acero-2:#1a232b;--sobre-acero:#e3e8ec;--cinta:#f0b31a;--cinta-tinta:#121518;color-scheme:dark}}
+:root[data-theme="dark"]{
+--hormigon:#121518;--losa:#191d21;--tinta:#e9ebe8;--gris:#9aa1a8;--linea:#2e353b;
+--acero:#0c1116;--acero-2:#1a232b;--sobre-acero:#e3e8ec;--cinta:#f0b31a;--cinta-tinta:#121518;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--hormigon);color:var(--tinta);font-family:var(--f-body);font-size:16px;line-height:1.6}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--f-display);font-weight:800;line-height:.98;letter-spacing:.005em;text-wrap:balance;margin:0;text-transform:uppercase}
+p{margin:0}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--cinta);outline-offset:3px}
+.eyebrow{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gris);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--cinta)}
+.mono{font-family:var(--f-mono)}
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:.95rem;text-decoration:none;padding:14px 22px;border:2px solid var(--tinta);transition:background .2s,color .2s}
+.btn-cinta{background:var(--cinta);border-color:var(--cinta);color:var(--cinta-tinta)}
+.btn-cinta:hover{background:var(--tinta);border-color:var(--tinta);color:var(--hormigon)}
+.btn-linea:hover{background:var(--tinta);color:var(--hormigon)}
+/* Nav */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--hormigon) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--linea)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo-mark{width:46px;height:46px;flex:none}
+.logo-txt{display:flex;flex-direction:column;line-height:1}
+.logo-txt b{font-family:var(--f-display);font-weight:900;font-size:1.45rem;letter-spacing:.04em}
+.logo-txt span{font-family:var(--f-mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gris);margin-top:3px}
+.nav-links{display:flex;gap:26px;font-size:.88rem;font-weight:600}
+.nav-links a{text-decoration:none;text-transform:uppercase;letter-spacing:.06em}
+.nav-links a:hover{color:var(--gris)}
+.nav .btn{padding:10px 16px;font-size:.85rem}
+@media (max-width:900px){.nav-links{display:none}}
+@media (max-width:420px){.nav .btn span{display:none}}
+/* Hero */
+.hero{border-bottom:1px solid var(--linea);background:
+linear-gradient(var(--linea) 1px,transparent 1px) 0 0/100% 80px,
+linear-gradient(90deg,var(--linea) 1px,transparent 1px) 0 0/80px 100%;
+background-color:var(--hormigon)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:end;padding-block:64px 0}
+.hero-copy{padding-bottom:64px;min-width:0}
+.hero h1{font-size:clamp(3rem,8vw,6.6rem);margin:18px 0 22px}
+.hero h1 em{font-style:normal;background:var(--cinta);color:var(--cinta-tinta);padding:0 .12em}
+.hero-lead{font-size:1.15rem;max-width:34em;color:var(--tinta)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:28px;margin-top:40px;border-top:1px solid var(--linea);padding-top:18px}
+.hero-meta div{font-family:var(--f-mono);font-size:.78rem;color:var(--gris);text-transform:uppercase;letter-spacing:.08em}
+.hero-meta b{display:block;font-family:var(--f-display);font-size:2rem;color:var(--tinta);letter-spacing:0}
+.elev{min-width:0;align-self:stretch;display:flex;align-items:flex-end}
+.elev svg{width:100%;height:auto;max-height:640px;display:block}
+@media (max-width:860px){.hero-grid{grid-template-columns:1fr;padding-top:44px}.hero-copy{padding-bottom:0}.elev{max-width:380px;margin:0 auto}}
+/* Sections */
+section{padding-block:96px}
+.sec-head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:52px}
+.sec-head h2{font-size:clamp(2.3rem,5vw,4rem);margin-top:14px}
+.sec-head p{color:var(--gris);max-width:36em}
+@media (max-width:760px){.sec-head{grid-template-columns:1fr;gap:18px}section{padding-block:68px}}
+/* Quienes somos */
+.about{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+.about-quote{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:clamp(1.9rem,3.6vw,2.9rem);line-height:1.02}
+.about-quote span{color:var(--gris)}
+.about-body{display:flex;flex-direction:column;gap:18px;font-size:1.05rem;min-width:0}
+.valores{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:14px;border-top:2px solid var(--tinta)}
+.valores div{padding:18px 18px 0 0}
+.valores h3{font-size:1.35rem;margin-bottom:6px}
+.valores p{font-size:.92rem;color:var(--gris)}
+@media (max-width:860px){.about{grid-template-columns:1fr;gap:32px}}
+@media (max-width:560px){.valores{grid-template-columns:1fr}.valores div{padding:16px 0 0}}
+/* Tipos de obra */
+.tipos{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--linea);border-left:1px solid var(--linea)}
+.tipo{border-right:1px solid var(--linea);border-bottom:1px solid var(--linea);padding:22px 18px 24px;background:var(--losa);display:flex;flex-direction:column;gap:14px;min-width:0}
+.tipo svg{width:56px;height:56px;color:var(--tinta)}
+.tipo h3{font-size:1.25rem}
+.tipo p{font-size:.88rem;color:var(--gris)}
+@media (max-width:1000px){.tipos{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:620px){.tipos{grid-template-columns:repeat(2,1fr)}}
+/* Servicios — banda acero */
+.acero{background:var(--acero);color:var(--sobre-acero)}
+.acero .eyebrow{color:color-mix(in srgb,var(--sobre-acero) 65%,transparent)}
+.acero .sec-head p{color:color-mix(in srgb,var(--sobre-acero) 72%,transparent)}
+.servicios{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--acero-2)}
+.servicio{background:var(--acero);padding:34px 28px 36px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.servicio .mono{font-size:.75rem;letter-spacing:.14em;color:var(--cinta);text-transform:uppercase}
+.servicio h3{font-size:2.3rem}
+.servicio p{color:color-mix(in srgb,var(--sobre-acero) 76%,transparent)}
+.servicio ul{margin:6px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px;font-size:.93rem}
+.servicio li{display:flex;gap:10px}
+.servicio li::before{content:"";flex:none;width:8px;height:8px;margin-top:.55em;background:var(--cinta)}
+@media (max-width:860px){.servicios{grid-template-columns:1fr}}
+/* Desarrollos */
+.dev-feature{display:grid;grid-template-columns:.8fr 1.2fr;gap:0;background:var(--losa);border:1px solid var(--linea)}
+.dev-img{position:relative;background:var(--acero);min-height:520px;overflow:hidden}
+.dev-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center bottom}
+.dev-img svg{position:absolute;inset:0;width:100%;height:100%}
+.dev-tag{position:absolute;top:16px;left:16px;font-family:var(--f-mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;background:var(--cinta);color:var(--cinta-tinta);padding:6px 10px;z-index:2}
+.dev-body{padding:40px 40px 36px;display:flex;flex-direction:column;gap:20px;min-width:0}
+.dev-body h3{font-size:clamp(2.6rem,5vw,4.2rem)}
+.dev-loc{font-family:var(--f-mono);font-size:.82rem;color:var(--gris)}
+.fichas{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--tinta);border-bottom:1px solid var(--linea)}
+.fichas div{padding:14px 10px 14px 0}
+.fichas b{display:block;font-family:var(--f-display);font-size:2.1rem;line-height:1}
+.fichas span{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gris)}
+.dev-list{display:grid;grid-template-columns:1fr 1fr;gap:8px 24px;font-size:.93rem;margin:0;padding:0;list-style:none}
+.dev-list li{border-bottom:1px dashed var(--linea);padding-bottom:6px}
+.avance{display:flex;flex-direction:column;gap:8px}
+.avance-top{display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.08em}
+.losas{display:grid;grid-template-columns:repeat(11,1fr);gap:3px}
+.losas i{height:12px;background:var(--tinta)}
+.losas i.p{background:transparent;border:1px solid var(--linea)}
+.dev-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:4px}
+@media (max-width:900px){.dev-feature{grid-template-columns:1fr}.dev-img{min-height:440px}.dev-body{padding:28px 22px}}
+@media (max-width:520px){.fichas{grid-template-columns:repeat(2,1fr)}.dev-list{grid-template-columns:1fr}}
+.otros{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:24px}
+.otro{background:var(--losa);border:1px solid var(--linea);display:grid;grid-template-columns:180px 1fr;min-width:0}
+.otro-plan{background:var(--hormigon);border-right:1px solid var(--linea);display:flex;align-items:center;justify-content:center;padding:16px}
+.otro-plan svg{width:100%;max-width:150px;height:auto;color:var(--tinta)}
+.otro-body{padding:24px 24px 26px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.estado{align-self:flex-start;font-family:var(--f-mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--tinta);padding:4px 8px}
+.otro h3{font-size:1.9rem}
+.otro p{color:var(--gris);font-size:.95rem}
+.otro ul{margin:0;padding:0;list-style:none;font-size:.9rem;display:flex;flex-direction:column;gap:4px}
+.otro li::before{content:"— ";color:var(--cinta);font-weight:700}
+@media (max-width:900px){.otros{grid-template-columns:1fr}}
+@media (max-width:520px){.otro{grid-template-columns:1fr}.otro-plan{border-right:0;border-bottom:1px solid var(--linea)}}
+/* Proceso */
+.proceso{display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:p}
+.paso{border-top:2px solid var(--tinta);padding:20px 22px 0 0;position:relative}
+.paso .mono{font-size:.75rem;color:var(--gris);letter-spacing:.1em}
+.paso h3{font-size:1.7rem;margin:8px 0 10px}
+.paso p{color:var(--gris);font-size:.94rem}
+@media (max-width:860px){.proceso{grid-template-columns:repeat(2,1fr);row-gap:30px}}
+@media (max-width:480px){.proceso{grid-template-columns:1fr}}
+/* Marcas */
+.marcas{background:var(--losa);border-block:1px solid var(--linea);padding-block:44px}
+.marcas-row{display:flex;flex-wrap:wrap;gap:14px 44px;align-items:center;justify-content:space-between;margin-top:20px}
+.marcas-row span{font-family:var(--f-display);font-weight:800;font-size:1.8rem;letter-spacing:.06em;color:var(--gris);text-transform:uppercase}
+/* Quote */
+.cita{padding-block:90px}
+.cita blockquote{margin:0;font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:clamp(2rem,4.8vw,3.8rem);line-height:1.02;max-width:20em;text-wrap:balance}
+.cita blockquote::before{content:"“";display:block;color:var(--cinta);font-size:1.6em;line-height:.6}
+.cita cite{display:block;margin-top:22px;font-style:normal;font-family:var(--f-mono);font-size:.82rem;color:var(--gris);letter-spacing:.08em;text-transform:uppercase}
+/* Contacto */
+.contacto-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start}
+.contacto h2{font-size:clamp(2.6rem,6vw,5rem)}
+.contacto .lead{margin-top:20px;font-size:1.08rem;color:color-mix(in srgb,var(--sobre-acero) 78%,transparent);max-width:30em}
+.datos{display:flex;flex-direction:column;border-top:1px solid var(--acero-2)}
+.dato{display:grid;grid-template-columns:110px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid var(--acero-2);align-items:center}
+.dato .mono{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:color-mix(in srgb,var(--sobre-acero) 60%,transparent)}
+.dato .v{font-size:1.05rem;font-weight:600;min-width:0;overflow-wrap:anywhere;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.dato a{text-decoration-color:var(--cinta);text-underline-offset:4px}
+.copy{font-family:var(--f-mono);font-size:.7rem;background:transparent;color:var(--sobre-acero);border:1px solid color-mix(in srgb,var(--sobre-acero) 40%,transparent);padding:4px 8px;cursor:pointer}
+.copy:hover{border-color:var(--cinta);color:var(--cinta)}
+.contacto .btn-cinta:hover{background:var(--sobre-acero);border-color:var(--sobre-acero);color:var(--acero)}
+@media (max-width:860px){.contacto-grid{grid-template-columns:1fr}}
+footer{background:var(--acero);color:color-mix(in srgb,var(--sobre-acero) 65%,transparent);border-top:1px solid var(--acero-2);padding-block:28px;font-size:.85rem}
+.foot{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;align-items:center}
+.foot a{text-decoration:none}
+.foot a:hover{color:var(--cinta)}
+.wa-float{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:30;width:56px;height:56px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.wa-float svg{width:30px;height:30px}
+</style>
+<style>
+.cadena{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--acero-2)}
+.eslabon{background:var(--acero);padding:30px 24px 34px;display:flex;flex-direction:column;gap:12px;min-width:0;position:relative}
+.eslabon .mono{font-size:.75rem;letter-spacing:.14em;color:var(--cinta);text-transform:uppercase}
+.eslabon h3{font-size:2.1rem}
+.eslabon p{color:color-mix(in srgb,var(--sobre-acero) 76%,transparent);font-size:.95rem}
+.eslabon:not(:last-child)::after{content:"→";position:absolute;right:-12px;top:30px;z-index:2;width:22px;height:22px;display:flex;align-items:center;justify-content:center;background:var(--cinta);color:var(--cinta-tinta);font-weight:700;font-size:.8rem}
+.propio{margin-top:34px;display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center;border-top:1px solid var(--acero-2);padding-top:22px;font-size:1.02rem}
+.propio b{font-family:var(--f-display);font-size:1.6rem;text-transform:uppercase;color:var(--cinta);letter-spacing:.02em}
+@media (max-width:900px){.cadena{grid-template-columns:repeat(2,1fr)}.eslabon:nth-child(2)::after{display:none}}
+@media (max-width:520px){.cadena{grid-template-columns:1fr}.eslabon::after{display:none}}
+.tipos.t3{grid-template-columns:repeat(3,1fr)}
+@media (max-width:760px){.tipos.t3{grid-template-columns:1fr}}
+.otros.o3{grid-template-columns:repeat(2,1fr)}
+.ventajas{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.ventaja{border-top:2px solid var(--tinta);padding:20px 22px 0 0}
+.ventaja h3{font-size:1.6rem;margin-bottom:10px}
+.ventaja p{color:var(--gris);font-size:.94rem}
+@media (max-width:860px){.ventajas{grid-template-columns:repeat(2,1fr);row-gap:30px}}
+@media (max-width:480px){.ventajas{grid-template-columns:1fr}}
+.historia{display:grid;grid-template-columns:auto 1fr;gap:56px;align-items:start}
+.anio{font-family:var(--f-display);font-weight:900;font-size:clamp(6rem,16vw,12rem);line-height:.8;color:var(--tinta)}
+.anio small{display:block;font-family:var(--f-mono);font-weight:400;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gris);margin-bottom:10px}
+@media (max-width:760px){.historia{grid-template-columns:1fr;gap:24px}}
+</style>
+<style>img{max-width:100%}[hidden]{display:none!important}body{margin:0}</style>
+</head>
+<body>
+<header class="top">
+<div class="wrap nav">
+<a class="logo" href="#inicio" aria-label="BVC Construcciones, inicio">
+<svg class="logo-mark" viewBox="0 0 48 48" aria-hidden="true">
+<rect x="1" y="1" width="46" height="46" fill="var(--tinta)"/>
+<rect x="8" y="30" width="8" height="10" fill="var(--cinta)"/>
+<rect x="20" y="20" width="8" height="20" fill="var(--hormigon)"/>
+<rect x="32" y="8" width="8" height="32" fill="var(--hormigon)"/>
+</svg>
+<span class="logo-txt"><b>BVC</b><span>Construcciones</span></span>
+</a>
+<nav class="nav-links" aria-label="Principal">
+<a href="#nosotros">Nosotros</a>
+<a href="#modelo">Qué hacemos</a>
+<a href="#desarrollos">Desarrollos</a>
+<a href="#comprar">Comprar e invertir</a>
+<a href="#contacto">Contacto</a>
+</nav>
+<a class="btn btn-cinta" href="#desarrollos">Ver <span>desarrollos</span></a>
+</div>
+</header>
+<main id="inicio">
+<section class="hero" style="padding-block:0">
+<div class="wrap hero-grid">
+<div class="hero-copy">
+<p class="eyebrow">Desarrolladora y constructora · Cochabamba</p>
+<h1>Desarrollamos, construimos y <em>vendemos</em> lo nuestro.</h1>
+<p class="hero-lead">BVC Construcciones es una desarrolladora inmobiliaria que construye sus propios proyectos. Invertimos en el terreno, diseñamos, levantamos la obra con equipo propio y la llevamos a la venta. Cada edificio y cada casa BVC es un proyecto nuestro, de principio a fin.</p>
+<div class="hero-cta">
+<a class="btn btn-cinta" href="#desarrollos">Conocer nuestros desarrollos</a>
+<a class="btn btn-linea" href="#modelo">Qué hacemos</a>
+</div>
+<div class="hero-meta">
+<div><b>6</b>Años desarrollando y construyendo</div>
+<div><b>100%</b>Proyectos propios</div>
+<div><b>2027</b>Entrega de Torre Toscana</div>
+</div>
+</div>
+<div class="elev" aria-label="Elevación de un edificio de 10 niveles con cotas">
+<svg viewBox="0 0 360 600" role="img">
+<title>Elevación de edificio con niveles</title>
+<g font-family="IBM Plex Mono, monospace" font-size="10" fill="var(--gris)">
+<rect x="90" y="40" width="170" height="540" fill="var(--losa)" stroke="var(--tinta)" stroke-width="2"/>
+<g stroke="var(--tinta)" stroke-width="1.2">
+<line x1="90" y1="94" x2="260" y2="94"/><line x1="90" y1="148" x2="260" y2="148"/><line x1="90" y1="202" x2="260" y2="202"/><line x1="90" y1="256" x2="260" y2="256"/><line x1="90" y1="310" x2="260" y2="310"/><line x1="90" y1="364" x2="260" y2="364"/><line x1="90" y1="418" x2="260" y2="418"/><line x1="90" y1="472" x2="260" y2="472"/><line x1="90" y1="526" x2="260" y2="526"/>
+</g>
+<g fill="var(--acero)" opacity=".9">
+<rect x="104" y="104" width="40" height="34"/><rect x="155" y="104" width="40" height="34"/><rect x="206" y="104" width="40" height="34"/>
+<rect x="104" y="158" width="40" height="34"/><rect x="155" y="158" width="40" height="34"/><rect x="206" y="158" width="40" height="34"/>
+<rect x="104" y="212" width="40" height="34"/><rect x="155" y="212" width="40" height="34"/><rect x="206" y="212" width="40" height="34"/>
+<rect x="104" y="266" width="40" height="34"/><rect x="155" y="266" width="40" height="34"/><rect x="206" y="266" width="40" height="34"/>
+<rect x="104" y="320" width="40" height="34"/><rect x="155" y="320" width="40" height="34"/><rect x="206" y="320" width="40" height="34"/>
+<rect x="104" y="374" width="40" height="34"/><rect x="155" y="374" width="40" height="34"/><rect x="206" y="374" width="40" height="34"/>
+<rect x="104" y="428" width="40" height="34"/><rect x="155" y="428" width="40" height="34"/><rect x="206" y="428" width="40" height="34"/>
+<rect x="104" y="482" width="40" height="34"/><rect x="155" y="482" width="40" height="34"/><rect x="206" y="482" width="40" height="34"/>
+</g>
+<rect x="104" y="58" width="90" height="10" fill="var(--cinta)"/>
+<rect x="206" y="50" width="40" height="36" fill="none" stroke="var(--tinta)" stroke-width="1.2"/>
+<rect x="140" y="540" width="70" height="40" fill="var(--acero)"/>
+<line x1="40" y1="580" x2="320" y2="580" stroke="var(--tinta)" stroke-width="2"/>
+<g stroke="var(--gris)" stroke-width="1">
+<line x1="270" y1="40" x2="300" y2="40"/><line x1="270" y1="580" x2="300" y2="580"/>
+<line x1="292" y1="40" x2="292" y2="580"/>
+</g>
+<text x="300" y="44">N +32.40</text>
+<text x="300" y="584">N ±0.00</text>
+<g text-anchor="end">
+<text x="82" y="70">TERRAZA</text>
+<text x="82" y="125">P8</text><text x="82" y="179">P7</text><text x="82" y="233">P6</text><text x="82" y="287">P5</text>
+<text x="82" y="341">P4</text><text x="82" y="395">P3</text><text x="82" y="449">P2</text><text x="82" y="503">P1</text>
+<text x="82" y="560">PB</text>
+</g>
+<text x="90" y="598">EJE A</text><text x="230" y="598">EJE C</text>
+</g>
+</svg>
+</div>
+</div>
+</section>
+<section id="nosotros">
+<div class="wrap historia">
+<div class="anio"><small>Desarrollando desde</small>2020</div>
+<div class="about-body">
+<p class="eyebrow">Nuestra historia</p>
+<p class="about-quote">Somos desarrolladores <span>que construyen su propia obra.</span></p>
+<p>Hace seis años el Ing. Cesar Barrera fundó BVC Construcciones con una idea simple: si el desarrollador también es el constructor, el proyecto sale mejor. Empezamos levantando casas propias para la venta y hoy desarrollamos edificios de departamentos en las mejores zonas de Cochabamba.</p>
+<p>No contratamos a una constructora para hacer nuestros proyectos, ni construimos para terceros. Toda nuestra capacidad de obra está dedicada a nuestros propios desarrollos. Por eso controlamos la calidad, el costo y el plazo de cada uno.</p>
+<div class="valores">
+<div><h3>Responsabilidad</h3><p>Cumplimos plazos y lo que firmamos.</p></div>
+<div><h3>Calidad</h3><p>Construimos como si fuera para nosotros, porque lo es.</p></div>
+<div><h3>Transparencia</h3><p>Obra abierta a visitas y avance publicado.</p></div>
+</div>
+</div>
+</div>
+</section>
+<section class="acero" id="modelo">
+<div class="wrap">
+<div class="sec-head">
+<div><p class="eyebrow">Qué hacemos</p><h2>Todo el desarrollo, en una sola mano</h2></div>
+<p>Participamos en cada etapa del negocio inmobiliario: desde la inversión inicial hasta la entrega de llaves al comprador.</p>
+</div>
+<div class="cadena">
+<div class="eslabon"><span class="mono">Inversión</span><h3>Invertimos</h3><p>Ponemos nuestro capital en terrenos con ubicación y potencial de valorización.</p></div>
+<div class="eslabon"><span class="mono">Desarrollo</span><h3>Desarrollamos</h3><p>Definimos el producto, diseñamos las tipologías y aprobamos el proyecto.</p></div>
+<div class="eslabon"><span class="mono">Construcción</span><h3>Construimos</h3><p>Levantamos la obra con equipo propio y supervisión de ingeniería en cada losa.</p></div>
+<div class="eslabon"><span class="mono">Venta</span><h3>Vendemos</h3><p>Comercializamos directo y con inmobiliarias asociadas, con plan de pagos propio.</p></div>
+</div>
+<div class="propio"><b>Cada obra BVC es nuestra.</b><span>Somos el desarrollador, el constructor y el dueño del proyecto hasta que lo entregamos.</span></div>
+</div>
+</section>
+<section>
+<div class="wrap">
+<div class="sec-head">
+<div><p class="eyebrow">Lo que desarrollamos</p><h2>Tipos de desarrollo</h2></div>
+<p>Proyectos residenciales pensados para vivir o para invertir y alquilar.</p>
+</div>
+<div class="tipos t3">
+<div class="tipo">
+<svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2"><rect x="16" y="6" width="24" height="44"/><path d="M22 14h4M30 14h4M22 22h4M30 22h4M22 30h4M30 30h4M22 38h4M30 38h4M6 50h44"/></svg>
+<h3>Desarrollos verticales</h3><p>Edificios de departamentos en zonas residenciales consolidadas, con áreas sociales en el último piso.</p>
+</div>
+<div class="tipo">
+<svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="20" width="18" height="30"/><rect x="32" y="20" width="18" height="30"/><path d="M6 20l9-10 9 10M32 20l9-10 9 10M4 50h48"/></svg>
+<h3>Condominios</h3><p>Bloques residenciales con departamentos amplios para familias.</p>
+</div>
+<div class="tipo">
+<svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 26L28 10l20 16M12 24v26h32V24M24 50V36h8v14"/></svg>
+<h3>Viviendas</h3><p>Casas propias construidas para la venta, como las primeras obras de BVC.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="desarrollos" style="padding-top:0">
+<div class="wrap">
+<div class="sec-head">
+<div><p class="eyebrow">Desarrollos BVC</p><h2>Nuestros desarrollos</h2></div>
+<p>Desarrollados y construidos por BVC. Visita la obra y compra sobre algo que ya se ve.</p>
+</div>
+<article class="dev-feature">
+<div class="dev-img">
+<span class="dev-tag">En construcción · Losa 10</span>
+<svg viewBox="0 0 300 520" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+<rect width="300" height="520" fill="var(--acero)"/>
+<rect x="80" y="60" width="140" height="440" fill="var(--acero-2)" stroke="var(--sobre-acero)" stroke-opacity=".5"/>
+<g fill="var(--cinta)" opacity=".85">
+<rect x="92" y="78" width="30" height="26"/><rect x="135" y="78" width="30" height="26"/><rect x="178" y="78" width="30" height="26"/>
+<rect x="92" y="122" width="30" height="26"/><rect x="178" y="122" width="30" height="26"/>
+<rect x="135" y="166" width="30" height="26"/><rect x="178" y="166" width="30" height="26"/>
+<rect x="92" y="210" width="30" height="26"/><rect x="135" y="210" width="30" height="26"/>
+<rect x="92" y="254" width="30" height="26"/><rect x="178" y="254" width="30" height="26"/>
+<rect x="135" y="298" width="30" height="26"/><rect x="178" y="298" width="30" height="26"/>
+<rect x="92" y="342" width="30" height="26"/><rect x="135" y="342" width="30" height="26"/>
+<rect x="92" y="386" width="30" height="26"/><rect x="178" y="386" width="30" height="26"/>
+</g>
+<rect x="60" y="500" width="180" height="2" fill="var(--sobre-acero)"/>
+</svg>
+<img src="https://torre-toscana.com/img/portada-edificio.jpg" alt="Fachada de Torre Toscana, edificio de 10 pisos en Zona Norte, Cochabamba" loading="lazy" onerror="this.remove()">
+</div>
+<div class="dev-body">
+<div>
+<p class="eyebrow">Zona Norte · Cochabamba</p>
+<h3 style="margin-top:12px">Torre Toscana</h3>
+<p class="dev-loc" style="margin-top:10px">Calle Hermógenes Sejas esq. Bernardo Monteagudo · a pasos del Parque del Arquitecto</p>
+</div>
+<div class="fichas">
+<div><b>10</b><span>Pisos</span></div>
+<div><b>24</b><span>Departamentos</span></div>
+<div><b>35 m²</b><span>Desde</span></div>
+<div><b>20%</b><span>Para entrar</span></div>
+</div>
+<ul class="dev-list">
+<li>Departamentos de 1 y 2 dormitorios</li>
+<li>Solo 3 departamentos por piso</li>
+<li>Cocina Hisense incluida</li>
+<li>Piscina, churrasquero y terraza</li>
+<li>Ascensor para 8 personas</li>
+<li>Parqueos y bauleras privadas</li>
+</ul>
+<div class="avance">
+<div class="avance-top"><span>Avance de estructura</span><span>Losa 10 vaciada · entrega abril 2027</span></div>
+<div class="losas" aria-label="10 de 11 niveles vaciados"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="p"></i></div>
+</div>
+<div class="dev-cta">
+<a class="btn btn-cinta" href="https://torre-toscana.com" target="_blank" rel="noopener">Visitar torre-toscana.com →</a>
+<a class="btn btn-linea" href="https://wa.me/59160744425?text=Hola%2C%20quiero%20visitar%20la%20obra%20de%20Torre%20Toscana" target="_blank" rel="noopener">Visitar la obra</a>
+</div>
+</div>
+</article>
+<div class="otros">
+<article class="otro">
+<div class="otro-plan">
+<svg viewBox="0 0 150 150" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+<rect x="6" y="20" width="62" height="110"/><rect x="82" y="20" width="62" height="110"/>
+<line x1="37" y1="20" x2="37" y2="130" stroke-dasharray="4 4"/><line x1="113" y1="20" x2="113" y2="130" stroke-dasharray="4 4"/>
+<rect x="29" y="64" width="16" height="22" fill="var(--cinta)" stroke="none"/><rect x="105" y="64" width="16" height="22" fill="var(--cinta)" stroke="none"/>
+<text x="30" y="14" font-family="IBM Plex Mono, monospace" font-size="11" fill="currentColor" stroke="none">A</text>
+<text x="106" y="14" font-family="IBM Plex Mono, monospace" font-size="11" fill="currentColor" stroke="none">B</text>
+</svg>
+</div>
+<div class="otro-body">
+<span class="estado">En desarrollo</span>
+<h3>Condominio Bloques A y B</h3>
+<p>Condominio residencial de dos bloques con departamentos amplios para familias.</p>
+<ul><li>Dos departamentos espejo de 100 m² por piso</li><li>3 dormitorios por departamento</li><li>Núcleo de gradas por bloque</li></ul>
+</div>
+</article>
+<article class="otro">
+<div class="otro-plan">
+<svg viewBox="0 0 150 150" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+<path d="M14 70L45 44l31 26M20 66v52h50V66M38 118V96h14v22"/>
+<path d="M80 70l28-24 28 24M86 66v52h44V66M101 118V98h14v20" />
+<line x1="6" y1="118" x2="144" y2="118"/>
+<rect x="56" y="78" width="10" height="10" fill="var(--cinta)" stroke="none"/><rect x="118" y="78" width="10" height="10" fill="var(--cinta)" stroke="none"/>
+</svg>
+</div>
+<div class="otro-body">
+<span class="estado">Entregado</span>
+<h3>Viviendas BVC</h3>
+<p>Nuestras primeras obras: casas que desarrollamos y construimos nosotros mismos para la venta. Con ellas empezó BVC hace seis años.</p>
+<ul><li>Desarrollo y construcción propios</li><li>Vendidas y entregadas a sus familias</li></ul>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section id="comprar" style="padding-top:0">
+<div class="wrap">
+<div class="sec-head">
+<div><p class="eyebrow">Comprar e invertir</p><h2>Comprar al desarrollador</h2></div>
+<p>Cuando compras en un proyecto BVC, le compras directamente a quien invirtió, diseñó y construyó el edificio.</p>
+</div>
+<div class="ventajas">
+<div class="ventaja"><h3>Obra real</h3><p>Compras sobre una obra en marcha que puedes visitar cuando quieras.</p></div>
+<div class="ventaja"><h3>Precio directo</h3><p>Sin intermediarios en la construcción: el desarrollador es el constructor.</p></div>
+<div class="ventaja"><h3>Plan de pagos propio</h3><p>Reserva, entrada desde el 20% y saldo contra entrega o crédito directo.</p></div>
+<div class="ventaja"><h3>Para vivir o alquilar</h3><p>Ubicaciones elegidas para que tu departamento se valorice y se alquile fácil.</p></div>
+</div>
+</div>
+</section>
+<div class="marcas">
+<div class="wrap">
+<p class="eyebrow">Marcas con las que construimos</p>
+<div class="marcas-row" aria-label="Marcas">
+<span>Hisense</span><span>FV</span><span>Tigre</span><span>Tramontina</span><span>Celite</span><span>Sika</span>
+</div>
+</div>
+</div>
+<section class="cita">
+<div class="wrap">
+<blockquote>Construimos cada proyecto como si fuera para nosotros, porque lo es.</blockquote>
+<cite>Ing. Cesar Barrera · BVC Construcciones</cite>
+</div>
+</section>
+<section class="acero contacto" id="contacto">
+<div class="wrap contacto-grid">
+<div>
+<p class="eyebrow">Contacto</p>
+<h2 style="margin-top:14px">Conoce nuestros desarrollos</h2>
+<p class="lead">¿Buscas un departamento para vivir o invertir? Escríbenos, te enviamos la información y coordinamos una visita a la obra.</p>
+<div class="hero-cta">
+<a class="btn btn-cinta" href="https://wa.me/59160744425?text=Hola%20BVC%2C%20quiero%20informaci%C3%B3n%20de%20sus%20desarrollos" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+</div>
+</div>
+<div class="datos">
+<div class="dato"><span class="mono">WhatsApp</span><span class="v"><span id="tel">+591 607 44425</span><button class="copy" type="button" data-copy="+59160744425">Copiar</button></span></div>
+<div class="dato"><span class="mono">Ciudad</span><span class="v">Cochabamba, Bolivia</span></div>
+<div class="dato"><span class="mono">Facebook</span><span class="v"><a href="https://www.facebook.com/barreravconstrucciones" target="_blank" rel="noopener">Barrera V Construcciones</a></span></div>
+<div class="dato"><span class="mono">Desarrollo</span><span class="v"><a href="https://torre-toscana.com" target="_blank" rel="noopener">torre-toscana.com</a></span></div>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="wrap foot">
+<span>© 2026 BVC Construcciones · Desarrolladora y constructora · Cochabamba</span>
+<span style="display:flex;gap:22px"><a href="#modelo">Qué hacemos</a><a href="#desarrollos">Desarrollos</a><a href="https://www.facebook.com/barreravconstrucciones" target="_blank" rel="noopener">Facebook</a></span>
+</div>
+</footer>
+<a class="wa-float" href="https://wa.me/59160744425?text=Hola%20BVC%2C%20quiero%20informaci%C3%B3n%20de%20sus%20desarrollos" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+<svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>
+</a>
+<script>
+document.querySelectorAll('.copy').forEach(function(b){
+b.addEventListener('click',function(){
+var t=b.getAttribute('data-copy');
+var done=function(){b.textContent='Copiado';setTimeout(function(){b.textContent='Copiar'},1600)};
+function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('tel'));var s=getSelection();s.removeAllRanges();s.addRange(r)}
+try{navigator.clipboard.writeText(t).then(done,sel)}catch(e){sel()}
+});
+});
+</script>
+</body>
+</html>
