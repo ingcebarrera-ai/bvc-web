@@ -4,576 +4,441 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>BVC Inversiones</title>
-<meta name="description" content="BVC Inversiones · Grupo empresarial en Cochabamba, Bolivia: Desarrollo Inmobiliario BVC, BVC Construcciones y BVC Importaciones. Desarrolladores de Torre Toscana.">
+<meta name="description" content="BVC Inversiones · Cochabamba, Bolivia. Desarrollo Inmobiliario BVC, BVC Construcciones y BVC Importaciones. Desarrolladores de Torre Toscana.">
+<meta property="og:title" content="BVC Inversiones">
+<meta property="og:description" content="Desarrollo inmobiliario, construcción e importación bajo una misma dirección. Cochabamba, Bolivia.">
+<meta property="og:image" content="https://cbarrera.com/img/portada-inversiones.jpg">
+<meta name="theme-color" content="#070504">
+<link rel="icon" href="img/logo-bvc.jpg">
+<script>if(location.protocol==='http:'&&/cbarrera\.com$/.test(location.hostname)){location.replace('https://'+location.host+location.pathname+location.search+location.hash)}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500&family=Source+Sans+3:wght@400;600;700&display=swap">
 <style>
-/* Layout: plano de obra — retícula de ejes, cotas de nivel y una elevación dibujada como portada; bandas de hormigón claro y acero oscuro */
 :root{
---hormigon:#ecedea;
---losa:#f7f7f5;
---tinta:#15191d;
---gris:#5b6168;
---linea:#c9ccc8;
---acero:#1c2833;
---acero-2:#26343f;
---sobre-acero:#e8ecef;
---cinta:#c49a3c;
---cinta-tinta:#15191d;
---f-display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
---f-body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
---f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
---max:1180px;
+  --negro:#070504;
+  --negro-2:#120f0c;
+  --arena:#e7e0d5;
+  --arena-2:#d9d0c2;
+  --oro:#c49a3c;
+  --oro-osc:#8f6c22;
+  --crema:#f3eee6;
+  --tinta:#070504;
+  --gris:#5d564d;
+  --f-titulo:"Unbounded","Arial Black",system-ui,sans-serif;
+  --f-texto:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+  --max:1240px;
+  --gut:max(20px,env(safe-area-inset-left,0px));
+  --gut-r:max(20px,env(safe-area-inset-right,0px));
+  color-scheme:dark;
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
---hormigon:#121518;--losa:#191d21;--tinta:#e9ebe8;--gris:#9aa1a8;--linea:#2e353b;
---acero:#0c1116;--acero-2:#1a232b;--sobre-acero:#e3e8ec;--cinta:#d6b25e;--cinta-tinta:#121518;color-scheme:dark}}
-:root[data-theme="dark"]{
---hormigon:#121518;--losa:#191d21;--tinta:#e9ebe8;--gris:#9aa1a8;--linea:#2e353b;
---acero:#0c1116;--acero-2:#1a232b;--sobre-acero:#e3e8ec;--cinta:#d6b25e;--cinta-tinta:#121518;color-scheme:dark}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
-body{background:var(--hormigon);color:var(--tinta);font-family:var(--f-body);font-size:16px;line-height:1.6}
-.wrap{max-width:var(--max);margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
-h1,h2,h3{font-family:var(--f-display);font-weight:800;line-height:.98;letter-spacing:.005em;text-wrap:balance;margin:0;text-transform:uppercase}
-p{margin:0}
+html{scroll-behavior:smooth;background:var(--negro)}
+body{margin:0;background:transparent;color:var(--crema);font-family:var(--f-texto);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
 a{color:inherit}
-a:focus-visible,button:focus-visible{outline:3px solid var(--cinta);outline-offset:3px}
-.eyebrow{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gris);display:flex;align-items:center;gap:10px}
-.eyebrow::before{content:"";width:22px;height:2px;background:var(--cinta)}
-.mono{font-family:var(--f-mono)}
-.btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:.95rem;text-decoration:none;padding:14px 22px;border:2px solid var(--tinta);transition:background .2s,color .2s}
-.btn-cinta{background:var(--cinta);border-color:var(--cinta);color:var(--cinta-tinta)}
-.btn-cinta:hover{background:var(--tinta);border-color:var(--tinta);color:var(--hormigon)}
-.btn-linea:hover{background:var(--tinta);color:var(--hormigon)}
-/* Nav */
-header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--hormigon) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--linea)}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
-.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
-.logo-mark{width:46px;height:46px;flex:none}
-.logo-txt{display:flex;flex-direction:column;line-height:1}
-.logo-txt b{font-family:var(--f-display);font-weight:900;font-size:1.45rem;letter-spacing:.04em}
-.logo-txt span{font-family:var(--f-mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gris);margin-top:3px}
-.nav-links{display:flex;gap:26px;font-size:.88rem;font-weight:600}
-.nav-links a{text-decoration:none;text-transform:uppercase;letter-spacing:.06em}
-.nav-links a:hover{color:var(--gris)}
-.nav .btn{padding:10px 16px;font-size:.85rem}
-@media (max-width:900px){.nav-links{display:none}}
-@media (max-width:420px){.nav .btn span{display:none}}
-/* Hero */
-.hero{border-bottom:1px solid var(--linea);background:
-linear-gradient(var(--linea) 1px,transparent 1px) 0 0/100% 80px,
-linear-gradient(90deg,var(--linea) 1px,transparent 1px) 0 0/80px 100%;
-background-color:var(--hormigon)}
-.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:end;padding-block:64px 0}
-.hero-copy{padding-bottom:64px;min-width:0}
-.hero h1{font-size:clamp(3rem,8vw,6.6rem);margin:18px 0 22px}
-.hero h1 em{font-style:normal;background:var(--cinta);color:var(--cinta-tinta);padding:0 .12em}
-.hero-lead{font-size:1.15rem;max-width:34em;color:var(--tinta)}
-.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-.hero-meta{display:flex;flex-wrap:wrap;gap:28px;margin-top:40px;border-top:1px solid var(--linea);padding-top:18px}
-.hero-meta div{font-family:var(--f-mono);font-size:.78rem;color:var(--gris);text-transform:uppercase;letter-spacing:.08em}
-.hero-meta b{display:block;font-family:var(--f-display);font-size:2rem;color:var(--tinta);letter-spacing:0}
-.elev{min-width:0;align-self:stretch;display:flex;align-items:flex-end}
-.elev svg{width:100%;height:auto;max-height:640px;display:block}
-@media (max-width:860px){.hero-grid{grid-template-columns:1fr;padding-top:44px}.hero-copy{padding-bottom:0}.elev{max-width:380px;margin:0 auto}}
-/* Sections */
-section{padding-block:96px}
-.sec-head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:52px}
-.sec-head h2{font-size:clamp(2.3rem,5vw,4rem);margin-top:14px}
-.sec-head p{color:var(--gris);max-width:36em}
-@media (max-width:760px){.sec-head{grid-template-columns:1fr;gap:18px}section{padding-block:68px}}
-/* Quienes somos */
-.about{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
-.about-quote{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:clamp(1.9rem,3.6vw,2.9rem);line-height:1.02}
-.about-quote span{color:var(--gris)}
-.about-body{display:flex;flex-direction:column;gap:18px;font-size:1.05rem;min-width:0}
-.valores{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:14px;border-top:2px solid var(--tinta)}
-.valores div{padding:18px 18px 0 0}
-.valores h3{font-size:1.35rem;margin-bottom:6px}
-.valores p{font-size:.92rem;color:var(--gris)}
-@media (max-width:860px){.about{grid-template-columns:1fr;gap:32px}}
-@media (max-width:560px){.valores{grid-template-columns:1fr}.valores div{padding:16px 0 0}}
-/* Tipos de obra */
-.tipos{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--linea);border-left:1px solid var(--linea)}
-.tipo{border-right:1px solid var(--linea);border-bottom:1px solid var(--linea);padding:22px 18px 24px;background:var(--losa);display:flex;flex-direction:column;gap:14px;min-width:0}
-.tipo svg{width:56px;height:56px;color:var(--tinta)}
-.tipo h3{font-size:1.25rem}
-.tipo p{font-size:.88rem;color:var(--gris)}
-@media (max-width:1000px){.tipos{grid-template-columns:repeat(3,1fr)}}
-@media (max-width:620px){.tipos{grid-template-columns:repeat(2,1fr)}}
-/* Servicios — banda acero */
-.acero{background:var(--acero);color:var(--sobre-acero)}
-.acero .eyebrow{color:color-mix(in srgb,var(--sobre-acero) 65%,transparent)}
-.acero .sec-head p{color:color-mix(in srgb,var(--sobre-acero) 72%,transparent)}
-.servicios{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--acero-2)}
-.servicio{background:var(--acero);padding:34px 28px 36px;display:flex;flex-direction:column;gap:14px;min-width:0}
-.servicio .mono{font-size:.75rem;letter-spacing:.14em;color:var(--cinta);text-transform:uppercase}
-.servicio h3{font-size:2.3rem}
-.servicio p{color:color-mix(in srgb,var(--sobre-acero) 76%,transparent)}
-.servicio ul{margin:6px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px;font-size:.93rem}
-.servicio li{display:flex;gap:10px}
-.servicio li::before{content:"";flex:none;width:8px;height:8px;margin-top:.55em;background:var(--cinta)}
-@media (max-width:860px){.servicios{grid-template-columns:1fr}}
-/* Desarrollos */
-.dev-feature{display:grid;grid-template-columns:.8fr 1.2fr;gap:0;background:var(--losa);border:1px solid var(--linea)}
-.dev-img{position:relative;background:var(--acero);min-height:520px;overflow:hidden}
-.dev-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center bottom}
-.dev-img svg{position:absolute;inset:0;width:100%;height:100%}
-.dev-tag{position:absolute;top:16px;left:16px;font-family:var(--f-mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;background:var(--cinta);color:var(--cinta-tinta);padding:6px 10px;z-index:2}
-.dev-body{padding:40px 40px 36px;display:flex;flex-direction:column;gap:20px;min-width:0}
-.dev-body h3{font-size:clamp(2.6rem,5vw,4.2rem)}
-.dev-loc{font-family:var(--f-mono);font-size:.82rem;color:var(--gris)}
-.fichas{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--tinta);border-bottom:1px solid var(--linea)}
-.fichas div{padding:14px 10px 14px 0}
-.fichas b{display:block;font-family:var(--f-display);font-size:2.1rem;line-height:1}
-.fichas span{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gris)}
-.dev-list{display:grid;grid-template-columns:1fr 1fr;gap:8px 24px;font-size:.93rem;margin:0;padding:0;list-style:none}
-.dev-list li{border-bottom:1px dashed var(--linea);padding-bottom:6px}
-.avance{display:flex;flex-direction:column;gap:8px}
-.avance-top{display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.08em}
-.losas{display:grid;grid-template-columns:repeat(11,1fr);gap:3px}
-.losas i{height:12px;background:var(--tinta)}
-.losas i.p{background:transparent;border:1px solid var(--linea)}
-.dev-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:4px}
-@media (max-width:900px){.dev-feature{grid-template-columns:1fr}.dev-img{min-height:440px}.dev-body{padding:28px 22px}}
-@media (max-width:520px){.fichas{grid-template-columns:repeat(2,1fr)}.dev-list{grid-template-columns:1fr}}
-.otros{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:24px}
-.otro{background:var(--losa);border:1px solid var(--linea);display:grid;grid-template-columns:180px 1fr;min-width:0}
-.otro-plan{background:var(--hormigon);border-right:1px solid var(--linea);display:flex;align-items:center;justify-content:center;padding:16px}
-.otro-plan svg{width:100%;max-width:150px;height:auto;color:var(--tinta)}
-.otro-body{padding:24px 24px 26px;display:flex;flex-direction:column;gap:12px;min-width:0}
-.estado{align-self:flex-start;font-family:var(--f-mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--tinta);padding:4px 8px}
-.otro h3{font-size:1.9rem}
-.otro p{color:var(--gris);font-size:.95rem}
-.otro ul{margin:0;padding:0;list-style:none;font-size:.9rem;display:flex;flex-direction:column;gap:4px}
-.otro li::before{content:"— ";color:var(--cinta);font-weight:700}
-@media (max-width:900px){.otros{grid-template-columns:1fr}}
-@media (max-width:520px){.otro{grid-template-columns:1fr}.otro-plan{border-right:0;border-bottom:1px solid var(--linea)}}
-/* Marcas */
-.marcas{background:var(--losa);border-block:1px solid var(--linea);padding-block:44px}
-.marcas-row{display:flex;flex-wrap:wrap;gap:14px 44px;align-items:center;justify-content:space-between;margin-top:20px}
-.marcas-row span{font-family:var(--f-display);font-weight:800;font-size:1.8rem;letter-spacing:.06em;color:var(--gris);text-transform:uppercase}
-/* Quote */
-.cita{padding-block:90px}
-.cita blockquote{margin:0;font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:clamp(2rem,4.8vw,3.8rem);line-height:1.02;max-width:20em;text-wrap:balance}
-.cita blockquote::before{content:"“";display:block;color:var(--cinta);font-size:1.6em;line-height:.6}
-.cita cite{display:block;margin-top:22px;font-style:normal;font-family:var(--f-mono);font-size:.82rem;color:var(--gris);letter-spacing:.08em;text-transform:uppercase}
-/* Contacto */
-.contacto-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start}
-.contacto h2{font-size:clamp(2.6rem,6vw,5rem)}
-.contacto .lead{margin-top:20px;font-size:1.08rem;color:color-mix(in srgb,var(--sobre-acero) 78%,transparent);max-width:30em}
-.datos{display:flex;flex-direction:column;border-top:1px solid var(--acero-2)}
-.dato{display:grid;grid-template-columns:110px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid var(--acero-2);align-items:center}
-.dato .mono{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:color-mix(in srgb,var(--sobre-acero) 60%,transparent)}
-.dato .v{font-size:1.05rem;font-weight:600;min-width:0;overflow-wrap:anywhere;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-.dato a{text-decoration-color:var(--cinta);text-underline-offset:4px}
-.contacto .btn-cinta:hover{background:var(--sobre-acero);border-color:var(--sobre-acero);color:var(--acero)}
-@media (max-width:860px){.contacto-grid{grid-template-columns:1fr}}
-footer{background:var(--acero);color:color-mix(in srgb,var(--sobre-acero) 65%,transparent);border-top:1px solid var(--acero-2);padding-block:28px;font-size:.85rem}
-.foot{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;align-items:center}
-.foot a{text-decoration:none}
-.foot a:hover{color:var(--cinta)}
-</style>
-<style>
-.cadena{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--acero-2)}
-.eslabon{background:var(--acero);padding:30px 24px 34px;display:flex;flex-direction:column;gap:12px;min-width:0;position:relative}
-.eslabon .mono{font-size:.75rem;letter-spacing:.14em;color:var(--cinta);text-transform:uppercase}
-.eslabon h3{font-size:2.1rem}
-.eslabon p{color:color-mix(in srgb,var(--sobre-acero) 76%,transparent);font-size:.95rem}
-.eslabon:not(:last-child)::after{content:"→";position:absolute;right:-12px;top:30px;z-index:2;width:22px;height:22px;display:flex;align-items:center;justify-content:center;background:var(--cinta);color:var(--cinta-tinta);font-weight:700;font-size:.8rem}
-.propio{margin-top:34px;display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center;border-top:1px solid var(--acero-2);padding-top:22px;font-size:1.02rem}
-.propio b{font-family:var(--f-display);font-size:1.6rem;text-transform:uppercase;color:var(--cinta);letter-spacing:.02em}
-@media (max-width:900px){.cadena{grid-template-columns:repeat(2,1fr)}.eslabon:nth-child(2)::after{display:none}}
-@media (max-width:520px){.cadena{grid-template-columns:1fr}.eslabon::after{display:none}}
-.tipos.t3{grid-template-columns:repeat(3,1fr)}
-@media (max-width:760px){.tipos.t3{grid-template-columns:1fr}}
-.otros.o3{grid-template-columns:repeat(2,1fr)}
-.ventajas{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
-.ventaja{border-top:2px solid var(--tinta);padding:20px 22px 0 0}
-.ventaja h3{font-size:1.6rem;margin-bottom:10px}
-.ventaja p{color:var(--gris);font-size:.94rem}
-@media (max-width:860px){.ventajas{grid-template-columns:repeat(2,1fr);row-gap:30px}}
-@media (max-width:480px){.ventajas{grid-template-columns:1fr}}
-.historia{display:grid;grid-template-columns:auto 1fr;gap:56px;align-items:start}
-.anio{font-family:var(--f-display);font-weight:900;font-size:clamp(6rem,16vw,12rem);line-height:.8;color:var(--tinta)}
-.anio small{display:block;font-family:var(--f-mono);font-weight:400;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gris);margin-bottom:10px}
-@media (max-width:760px){.historia{grid-template-columns:1fr;gap:24px}}
-</style>
-<style>img{max-width:100%}[hidden]{display:none!important}body{margin:0}</style>
-<style>
-.link-cinta{margin-top:auto;padding-top:10px;font-weight:700;color:var(--cinta);text-decoration:none;font-size:.95rem}
-.imp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--acero-2)}
-.imp{background:var(--acero);color:var(--sobre-acero);padding:34px 30px 36px;display:flex;flex-direction:column;gap:14px;align-items:flex-start;min-width:0}
-.imp .mono{font-size:.75rem;letter-spacing:.14em;color:var(--cinta);text-transform:uppercase}
-.imp h3{font-size:2.4rem}
-.imp p{color:color-mix(in srgb,var(--sobre-acero) 76%,transparent)}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px}
-.chips span{font-family:var(--f-mono);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;border:1px solid color-mix(in srgb,var(--sobre-acero) 35%,transparent);padding:6px 10px}
-.chips.claro{margin-top:28px}
-.chips.claro span{border-color:var(--linea);color:var(--tinta);background:var(--hormigon)}
-@media (max-width:760px){.imp-grid{grid-template-columns:1fr}}
-.hero2{border-bottom:1px solid var(--linea);padding-block:72px 80px;background:linear-gradient(var(--linea) 1px,transparent 1px) 0 0/100% 80px,linear-gradient(90deg,var(--linea) 1px,transparent 1px) 0 0/80px 100%;background-color:var(--hormigon)}
-.hero2 h1{font-size:clamp(3.6rem,11vw,8.4rem);margin:18px 0 20px}
-.hero2 h1 em{font-style:normal;background:var(--cinta);color:var(--cinta-tinta);padding:0 .12em}
-.hero2 .hero-lead{max-width:40em}
-.arbol{margin-top:56px}
-.raiz{margin:0 auto;width:max-content;max-width:100%;background:var(--tinta);color:var(--hormigon);padding:16px 30px;text-align:center;position:relative;display:flex;flex-direction:column;gap:4px}
-.raiz .mono{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--cinta)}
-.raiz b{font-family:var(--f-display);font-weight:900;font-size:1.9rem;text-transform:uppercase;letter-spacing:.02em;line-height:1}
-.raiz::after{content:"";position:absolute;left:50%;top:100%;width:2px;height:28px;margin-left:-1px;background:var(--tinta)}
-.ramas{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:28px;padding-top:28px;position:relative}
-.ramas::before{content:"";position:absolute;top:0;left:calc((100% - 40px)/6);right:calc((100% - 40px)/6);height:2px;background:var(--tinta)}
-.rama{position:relative;border:2px solid var(--tinta);background:var(--losa);padding:24px 22px;text-decoration:none;display:flex;flex-direction:column;gap:10px;min-width:0;transition:border-color .2s}
-.rama::before{content:"";position:absolute;bottom:100%;left:50%;width:2px;height:30px;margin-left:-1px;background:var(--tinta)}
-.rama:hover{border-color:var(--cinta)}
-.rama svg{width:44px;height:44px}
-.rama b{font-family:var(--f-display);font-weight:800;font-size:1.6rem;text-transform:uppercase;line-height:1}
-.rama span{color:var(--gris);font-size:.95rem}
-.rama em{font-style:normal;font-family:var(--f-mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;margin-top:auto;padding-top:6px}
-@media (max-width:760px){.ramas{grid-template-columns:1fr;padding-top:20px;margin-top:28px}.ramas::before{display:none}.rama::before{height:22px}.rama:first-child::before{height:30px}}
-.rama-head{display:flex;flex-direction:column;gap:14px;max-width:46em;margin-bottom:44px}
-.rama-head h2{font-size:clamp(2.4rem,5.5vw,4.4rem)}
-.rama-head>p:last-child{color:var(--gris);font-size:1.05rem}
-.rama-sec.alt{background:var(--losa);border-block:1px solid var(--linea)}
-.logo-mark{border-radius:50%;object-fit:cover}
-.portada{display:block;width:100%;height:auto;aspect-ratio:1800/750;object-fit:cover;margin-bottom:44px;background:#0b0b0b}
-.raiz img{width:64px;height:64px;border-radius:50%;margin:0 auto 6px}
-.otro-plan.foto{padding:0;background:#0b0b0b}
-.otro-plan.foto img{width:100%;height:100%;min-height:200px;object-fit:cover;display:block}
-.galeria-head{margin:44px 0 16px}
-.galeria{display:grid;gap:10px}
-.galeria.g4{grid-template-columns:repeat(4,1fr)}
-.galeria img{width:100%;height:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:var(--linea)}
-.galeria.alta img{aspect-ratio:3/4}
-@media (max-width:760px){.galeria.g4{grid-template-columns:repeat(2,1fr)}}
+p{margin:0}
+h1,h2,h3{margin:0;font-family:var(--f-titulo);font-weight:300;text-transform:uppercase;line-height:1.02;letter-spacing:-.01em;text-wrap:balance}
+:focus-visible{outline:2px solid var(--oro);outline-offset:3px}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:var(--gut);padding-right:var(--gut-r)}
+.kicker{font-family:var(--f-titulo);font-weight:400;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--oro)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:17px 34px;border-radius:10px;border:1px solid var(--oro);background:var(--negro);color:var(--crema);font-family:var(--f-titulo);font-weight:400;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;transition:background .3s,color .3s}
+.btn:hover{background:var(--oro);color:var(--negro)}
+.btn.claro{background:transparent}
 
-/* ===== Tema premium: fondo fijo, paneles de vidrio, negro y dorado ===== */
-:root:root:root{--hormigon:#0a0a0b;--losa:#141415;--tinta:#efebe2;--gris:#a39e94;--linea:#2c2a27;--acero:#0d0d0e;--acero-2:#26231f;--sobre-acero:#efebe2;--cinta:#c9a24c;--cinta-tinta:#0a0a0b;color-scheme:dark}
-html{background:#060606}
-body{background:transparent;color:var(--tinta)}
-.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.fondo{position:fixed;inset:0;z-index:-1;background:#060606 url(img/portada-inversiones.jpg) center 42%/cover no-repeat}
-.fondo::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,transparent 35%,rgba(0,0,0,.55) 100%)}
-@media (max-width:760px){.fondo{background-size:auto 62vh;background-position:center 30%}}
-header.top{background:transparent;border-bottom:1px solid transparent;backdrop-filter:none;transition:background .35s,border-color .35s}
-header.top.solid{background:rgba(8,8,8,.86);border-bottom-color:rgba(201,162,76,.25);backdrop-filter:blur(10px)}
-.nav-links a{color:#efebe2}
-.nav-links a:hover{color:var(--cinta)}
-.portada-hero{min-height:100svh;display:flex;align-items:flex-end;padding-block:0 6vh;background:linear-gradient(to bottom,transparent 55%,rgba(6,6,6,.85) 100%);border:0}
-.portada-inner{width:100%;display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px}
-.portada-inner .eyebrow{color:#cfc8b8}
-.portada-lead{font-size:clamp(1.05rem,2vw,1.35rem);color:#efebe2;max-width:36em;text-shadow:0 2px 12px rgba(0,0,0,.8)}
-.bajar{margin-top:18px;display:flex;flex-direction:column;align-items:center;gap:10px;text-decoration:none;font-family:var(--f-mono);font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--cinta)}
-.bajar i{width:22px;height:36px;border:1.5px solid var(--cinta);border-radius:12px;position:relative}
-.bajar i::after{content:"";position:absolute;left:50%;top:7px;width:3px;height:7px;margin-left:-1.5px;border-radius:2px;background:var(--cinta);animation:rueda 1.8s infinite}
-@keyframes rueda{0%{opacity:0;transform:translateY(0)}30%{opacity:1}100%{opacity:0;transform:translateY(12px)}}
-.panel{background:rgba(9,9,10,.9);border-top:1px solid rgba(201,162,76,.18)}
-.panel.alt{background:rgba(18,17,16,.92)}
-.panel.acero{background:rgba(5,5,6,.94)}
-.ventana{height:55vh;background:transparent}
-.ventana-cita{background:linear-gradient(to bottom,rgba(6,6,6,.25),rgba(6,6,6,.6));padding-block:22vh;border-top:1px solid rgba(201,162,76,.18)}
-.ventana-cita blockquote{color:#f4efe4;text-shadow:0 2px 18px rgba(0,0,0,.9);margin:0 auto;text-align:center}
-.ventana-cita cite{text-align:center;color:#cfc8b8}
-.rama-head.centro{align-items:center;text-align:center;margin-inline:auto}
-.rama-head h2,.sec-head h2{color:#f4efe4}
-.eyebrow{color:#b9b2a3}
-.raiz{background:#0a0a0b;color:#efebe2;border:1.5px solid var(--cinta);box-shadow:0 0 40px rgba(201,162,76,.12)}
-.raiz::after,.ramas::before,.rama::before{background:var(--cinta)}
-.rama{background:rgba(20,20,21,.9);border:1.5px solid #3a352d;transition:border-color .25s,transform .25s,box-shadow .25s}
-.rama:hover{border-color:var(--cinta);transform:translateY(-4px);box-shadow:0 14px 40px rgba(0,0,0,.5)}
-.rama svg{color:var(--cinta)}
-.rama em{color:var(--cinta)}
-.tipo{background:rgba(22,22,23,.9)}
-.tipo svg{color:var(--cinta)}
-.tipos{border-color:#2c2a27}
-.dev-feature,.otro{background:rgba(20,20,21,.92);border-color:#2c2a27}
-.otro-plan{background:#0d0d0e}
-.btn{border-color:#efebe2;color:#efebe2}
-.btn-cinta{color:var(--cinta-tinta)}
-.btn-linea:hover{background:#efebe2;color:#0a0a0b}
-.hero h1 em,.anio{color:#f4efe4}
-.anio{background:linear-gradient(180deg,#f1d792,#a9832f);-webkit-background-clip:text;background-clip:text;color:transparent}
-.marcas-row span{color:#8c867b}
-.galeria img{border:1px solid #2c2a27;transition:transform .5s}
-.galeria{overflow:hidden}
-.galeria img:hover{transform:scale(1.03)}
-.reveal{transition:opacity .8s ease,transform .8s ease}
-.js .reveal:not(.visto){opacity:0;transform:translateY(28px)}
-@media (prefers-reduced-motion:reduce){.js .reveal:not(.visto){opacity:1;transform:none}.bajar i::after{animation:none}}
-.dato .v.fb{flex-direction:column;align-items:flex-start;gap:6px}
+/* Fondo fijo */
+.fondo{position:fixed;inset:0;z-index:-1;background:#050403 url(img/portada-inversiones.jpg) center 40%/cover no-repeat}
+.fondo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,5,4,.35) 0%,rgba(7,5,4,0) 22%,rgba(7,5,4,0) 62%,rgba(7,5,4,.92) 100%)}
+@media (max-width:760px){.fondo{background-size:180% auto;background-position:center 34%}}
+
+/* Encabezado */
+.top{position:fixed;top:0;left:0;right:0;z-index:50;padding-top:env(safe-area-inset-top,0px);transition:background .4s}
+.top.solido{background:rgba(7,5,4,.92);backdrop-filter:blur(8px)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:92px}
+.marca{display:flex;align-items:center;gap:14px;text-decoration:none}
+.marca img{width:54px;height:54px;border-radius:50%}
+.marca span{font-family:var(--f-titulo);font-weight:400;font-size:.95rem;letter-spacing:.14em;line-height:1.1}
+.marca small{display:block;font-size:.58rem;letter-spacing:.32em;color:var(--oro)}
+.top-der{display:flex;align-items:center;gap:26px}
+.top-dato{font-family:var(--f-titulo);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;text-align:right;line-height:1.7;color:var(--crema)}
+.top-dato b{color:var(--oro);font-weight:400}
+.hamb{width:64px;height:64px;border-radius:12px;border:1px solid var(--oro);background:rgba(7,5,4,.35);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;cursor:pointer;transition:background .3s}
+.hamb:hover{background:rgba(196,154,60,.18)}
+.hamb i{width:24px;height:1.5px;background:var(--crema);transition:transform .35s,opacity .35s}
+.menu-abierto .hamb i:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.menu-abierto .hamb i:nth-child(2){opacity:0}
+.menu-abierto .hamb i:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+@media (max-width:760px){.top-dato{display:none}.top .wrap{height:78px}.hamb{width:54px;height:54px}.marca img{width:46px;height:46px}}
+
+/* Menú pantalla completa */
+.menu{position:fixed;inset:0;z-index:45;background:var(--negro);display:grid;grid-template-columns:1.1fr .9fr;opacity:0;visibility:hidden;transition:opacity .45s,visibility .45s}
+.menu-abierto .menu{opacity:1;visibility:visible}
+.menu-foto{background:url(img/toscana-obra-2.jpg) center/cover;position:relative}
+.menu-foto::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,5,4,.15),rgba(7,5,4,.9))}
+.menu-lista{display:flex;flex-direction:column;justify-content:center;gap:6px;padding:120px max(28px,env(safe-area-inset-right,0px)) 60px 56px}
+.menu-lista a{font-family:var(--f-titulo);font-weight:300;font-size:clamp(1.6rem,3.4vw,2.8rem);text-transform:uppercase;text-decoration:none;line-height:1.25;transition:color .25s,padding .25s}
+.menu-lista a:hover{color:var(--oro);padding-left:10px}
+.menu-redes{margin-top:34px;display:flex;flex-wrap:wrap;gap:10px 24px;font-family:var(--f-titulo);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase}
+.menu-redes a{font-size:.62rem;color:var(--oro)}
+@media (max-width:760px){.menu{grid-template-columns:1fr}.menu-foto{display:none}.menu-lista{padding-left:max(28px,env(safe-area-inset-left,0px))}}
+
+/* Portada */
+.hero{min-height:100svh;display:flex;align-items:flex-end;padding-bottom:7vh}
+.hero .wrap{width:100%;display:grid;grid-template-columns:1fr auto;align-items:end;gap:40px}
+.hero-texto{max-width:34em}
+.hero-texto p{font-size:1.08rem;color:#eae4da;text-shadow:0 2px 14px rgba(0,0,0,.9)}
+.hero-texto p b{color:#fff}
+.hero-texto .btn{margin-top:26px}
+.hero-tarjeta{width:290px;border-radius:14px;overflow:hidden;background:rgba(7,5,4,.75);border:1px solid rgba(196,154,60,.45);text-decoration:none;display:block;transition:transform .35s}
+.hero-tarjeta:hover{transform:translateY(-4px)}
+.hero-tarjeta img{width:100%;height:170px;object-fit:cover}
+.hero-tarjeta div{padding:16px 18px 18px;text-align:center}
+.hero-tarjeta b{display:block;font-family:var(--f-titulo);font-weight:400;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
+.hero-tarjeta span{display:block;margin-top:6px;font-family:var(--f-titulo);font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--oro)}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero-tarjeta{width:100%;max-width:420px}.hero{padding-bottom:5vh}}
+
+/* Secciones base */
+.sec{position:relative;padding-block:120px}
+.sec.negro{background:var(--negro);color:var(--crema)}
+.sec.arena{background:var(--arena);color:var(--tinta)}
+.sec.arena .kicker{color:var(--oro-osc)}
+.titulo{font-size:clamp(2.2rem,5vw,4.2rem)}
+.centro{text-align:center;margin-inline:auto}
+.intro{max-width:44em;margin:22px auto 0;font-size:1.08rem}
+.sec.negro .intro{color:#cfc7ba}
+.sec.arena .intro{color:var(--gris)}
+@media (max-width:760px){.sec{padding-block:84px}}
+
+/* Desde 2020 */
+.desde{text-align:center}
+.desde h2{font-size:clamp(2.6rem,6vw,4.6rem);text-transform:none}
+.desde h2 em{font-style:normal;color:var(--oro-osc)}
+.desde .cuerpo{max-width:46em;margin:26px auto 0;color:#3d372f;font-size:1.08rem}
+.desde .cuerpo b{color:var(--tinta)}
+.desde .btn{margin-top:36px}
+.declaracion{margin:72px auto 0;max-width:920px;border:1px solid #b9ad9b;border-radius:18px;padding:48px 40px;text-align:center}
+.declaracion p{font-family:var(--f-titulo);font-weight:300;font-size:clamp(1.25rem,2.6vw,1.95rem);line-height:1.35;color:var(--tinta)}
+.iconos{margin:64px auto 0;max-width:980px;display:grid;grid-template-columns:repeat(5,1fr);gap:24px;text-align:center}
+.iconos div{display:flex;flex-direction:column;align-items:center;gap:14px;font-size:.98rem;line-height:1.25;color:#3d372f}
+.iconos svg{width:56px;height:56px;color:var(--tinta)}
+@media (max-width:760px){.iconos{grid-template-columns:repeat(3,1fr);row-gap:34px}.declaracion{padding:34px 22px}}
+
+/* Empresas: tarjetas con foto */
+.empresas{margin-top:64px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.empresa{position:relative;min-height:520px;border-radius:16px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:30px 28px;text-decoration:none;isolation:isolate}
+.empresa img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .9s}
+.empresa::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(7,5,4,.05) 30%,rgba(7,5,4,.92) 88%)}
+.empresa:hover img{transform:scale(1.06)}
+.empresa .kicker{margin-bottom:10px}
+.empresa h3{font-size:clamp(1.3rem,2vw,1.7rem)}
+.empresa p{margin-top:12px;color:#d9d1c4;font-size:1rem;max-height:0;overflow:hidden;opacity:0;transition:max-height .5s,opacity .5s}
+.empresa:hover p,.empresa:focus-visible p{max-height:10em;opacity:1}
+.empresa .mas{margin-top:18px;font-family:var(--f-titulo);font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--oro)}
+@media (hover:none){.empresa p{max-height:none;opacity:1}}
+@media (max-width:900px){.empresas{grid-template-columns:1fr}.empresa{min-height:420px}}
+
+/* Desarrollos */
+.dev{margin-top:64px;display:grid;grid-template-columns:.85fr 1.15fr;gap:0;border-radius:18px;overflow:hidden;background:var(--negro-2);border:1px solid #2a241c}
+.dev-foto{position:relative;min-height:560px;background:#0d0b09}
+.dev-foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.dev-foto .etiqueta{position:absolute;top:18px;left:18px;z-index:2;background:var(--oro);color:var(--negro);font-family:var(--f-titulo);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;padding:8px 12px;border-radius:6px}
+.dev-info{padding:48px 46px;display:flex;flex-direction:column;gap:22px;min-width:0}
+.dev-info h3{font-size:clamp(2rem,4vw,3.2rem)}
+.dev-info .lugar{color:#b9b0a2;font-size:.98rem}
+.cifras{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--oro);border-bottom:1px solid #2a241c}
+.cifras div{padding:16px 8px 16px 0}
+.cifras b{display:block;font-family:var(--f-titulo);font-weight:300;font-size:1.9rem;line-height:1}
+.cifras span{font-family:var(--f-titulo);font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:var(--oro)}
+.lista{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px 26px;font-size:.98rem;color:#d9d1c4}
+.lista li{padding-left:18px;position:relative}
+.lista li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;border:1px solid var(--oro);transform:rotate(45deg)}
+.avance{display:flex;flex-direction:column;gap:8px}
+.avance-t{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:var(--f-titulo);font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:#b9b0a2}
+.losas{display:grid;grid-template-columns:repeat(11,1fr);gap:4px}
+.losas i{height:10px;border-radius:2px;background:var(--oro)}
+.losas i.p{background:transparent;border:1px solid #4a4034}
+.dev-info .btn{align-self:flex-start}
+@media (max-width:900px){.dev{grid-template-columns:1fr}.dev-foto{min-height:440px}.dev-info{padding:32px 24px}}
+@media (max-width:520px){.cifras{grid-template-columns:repeat(2,1fr)}.lista{grid-template-columns:1fr}}
+
+.duo{margin-top:22px;display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.mini{border-radius:16px;overflow:hidden;background:var(--negro-2);border:1px solid #2a241c;display:grid;grid-template-columns:200px 1fr;min-width:0}
+.mini-foto{background:#0d0b09;display:flex;align-items:center;justify-content:center}
+.mini-foto img{width:100%;height:100%;object-fit:cover}
+.mini-foto svg{width:120px;color:var(--oro)}
+.mini-info{padding:28px 26px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.estado{align-self:flex-start;font-family:var(--f-titulo);font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;border:1px solid var(--oro);color:var(--oro);padding:6px 10px;border-radius:6px}
+.mini-info h3{font-size:1.35rem}
+.mini-info p{color:#cfc7ba;font-size:.98rem}
+@media (max-width:900px){.duo{grid-template-columns:1fr}}
+@media (max-width:520px){.mini{grid-template-columns:1fr}.mini-foto{height:200px}}
+
+.galeria{margin-top:22px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.galeria img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;transition:transform .6s}
+.galeria.alta img{aspect-ratio:3/4}
+.galeria figure{margin:0;overflow:hidden;border-radius:12px}
+.galeria figure:hover img{transform:scale(1.05)}
+@media (max-width:760px){.galeria{grid-template-columns:repeat(2,1fr)}}
+
+.ventajas{margin-top:72px;display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.ventaja{border-top:1px solid var(--oro);padding-top:20px}
+.ventaja h3{font-size:1.05rem;margin-bottom:10px}
+.ventaja p{color:#cfc7ba;font-size:.98rem}
+@media (max-width:860px){.ventajas{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.ventajas{grid-template-columns:1fr}}
+
+/* Cita: ventana al fondo */
+.ventana{padding-block:26vh;text-align:center;background:linear-gradient(180deg,rgba(7,5,4,.55),rgba(7,5,4,.35),rgba(7,5,4,.6))}
+.comillas{font-family:Georgia,serif;font-size:5rem;line-height:.5;color:var(--oro)}
+.ventana blockquote{margin:18px auto 0;max-width:22em;font-family:var(--f-titulo);font-weight:300;font-size:clamp(1.5rem,3.4vw,2.6rem);line-height:1.3;text-transform:uppercase;text-shadow:0 2px 20px rgba(0,0,0,.9)}
+.ventana cite{display:block;margin-top:26px;font-style:normal;font-family:var(--f-titulo);font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;color:var(--oro)}
+
+/* Construcciones: capacidades */
+.capas{margin-top:56px;display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid #b9ad9b;border-radius:16px;overflow:hidden}
+.capa{padding:30px 24px;border-right:1px solid #b9ad9b}
+.capa:last-child{border-right:0}
+.capa svg{width:46px;height:46px;color:var(--tinta);margin-bottom:16px}
+.capa h3{font-size:1rem;color:var(--tinta);margin-bottom:8px}
+.capa p{color:var(--gris);font-size:.96rem}
+@media (max-width:860px){.capas{grid-template-columns:1fr 1fr}.capa:nth-child(2){border-right:0}.capa:nth-child(-n+2){border-bottom:1px solid #b9ad9b}}
+@media (max-width:480px){.capas{grid-template-columns:1fr}.capa{border-right:0;border-bottom:1px solid #b9ad9b}.capa:last-child{border-bottom:0}}
+.sec.arena .galeria-t{margin-top:56px}
+.galeria-t{font-family:var(--f-titulo);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase}
+
+/* Importaciones */
+.lineas{margin-top:56px;display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.linea{border-radius:16px;border:1px solid #2a241c;background:var(--negro-2);padding:40px 36px;display:flex;flex-direction:column;gap:16px}
+.linea svg{width:54px;height:54px;color:var(--oro)}
+.linea h3{font-size:clamp(1.4rem,2.4vw,1.9rem)}
+.linea p{color:#cfc7ba}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.chips span{font-family:var(--f-titulo);font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;border:1px solid #4a4034;border-radius:30px;padding:8px 14px;color:#e3dccf}
+@media (max-width:860px){.lineas{grid-template-columns:1fr}}
+
+/* Marcas en movimiento */
+.marcas{padding-block:70px;background:var(--negro);border-top:1px solid #1e1a15;overflow:hidden}
+.marcas .kicker{text-align:center;display:block;margin-bottom:30px}
+.cinta{display:flex;width:max-content;animation:correr 30s linear infinite}
+.cinta span{font-family:var(--f-titulo);font-weight:300;font-size:2rem;letter-spacing:.08em;text-transform:uppercase;color:#6f665a;padding-inline:44px;white-space:nowrap}
+@keyframes correr{to{transform:translateX(-50%)}}
+
+/* Pie */
+.pie{background:var(--negro);border-top:1px solid #1e1a15;padding-block:80px 34px}
+.pie-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.2fr;gap:40px}
+.pie img{width:92px;height:92px;border-radius:50%}
+.pie h4{margin:0 0 16px;font-family:var(--f-titulo);font-weight:400;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--oro)}
+.pie ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+.pie a{text-decoration:none;color:#d9d1c4;transition:color .2s}
+.pie a:hover{color:var(--oro)}
+.pie .lema{margin-top:18px;color:#a39a8c;font-size:.95rem;max-width:22em}
+.pie-base{margin-top:60px;padding-top:24px;border-top:1px solid #1e1a15;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.85rem;color:#8a8174}
+@media (max-width:860px){.pie-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.pie-grid{grid-template-columns:1fr}}
+
+/* Animación de entrada */
+.js .rv{opacity:0;transform:translateY(36px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.js .rv.si{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}.cinta{animation:none}html{scroll-behavior:auto}}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
-<header class="top">
-<div class="wrap nav">
-<a class="logo" href="#inicio" aria-label="BVC Inversiones, inicio">
-<img class="logo-mark" src="img/logo-bvc.jpg" alt="Logo BVC" width="46" height="46">
-<span class="logo-txt"><b>BVC</b><span>Inversiones</span></span>
-</a>
-<nav class="nav-links" aria-label="Principal">
-<a href="#grupo">El grupo</a>
+<div class="fondo" aria-hidden="true"></div>
+
+<header class="top" id="top">
+<div class="wrap">
+<a class="marca" href="#inicio" aria-label="BVC Inversiones, inicio"><img src="img/logo-bvc.jpg" alt="" width="54" height="54"><span>BVC<small>Inversiones</small></span></a>
+<div class="top-der">
+<p class="top-dato">Cochabamba · Bolivia<br><b>info@cbarrera.com</b></p>
+<button class="hamb" id="hamb" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><i></i><i></i><i></i></button>
+</div>
+</div>
+</header>
+
+<nav class="menu" id="menu" aria-label="Menú principal">
+<div class="menu-foto" aria-hidden="true"></div>
+<div class="menu-lista">
+<a href="#inicio">Inicio</a>
+<a href="#nosotros">Nosotros</a>
+<a href="#empresas">Empresas</a>
 <a href="#desarrollo">Desarrollo inmobiliario</a>
 <a href="#construcciones">Construcciones</a>
 <a href="#importaciones">Importaciones</a>
 <a href="#contacto">Contacto</a>
+<div class="menu-redes">
+<a href="https://www.facebook.com/ingcebarrera/" target="_blank" rel="noopener">Cesar Barrera</a>
+<a href="https://www.facebook.com/barreravconstrucciones" target="_blank" rel="noopener">BVC Construcciones</a>
+<a href="https://www.facebook.com/cbarreraimport/" target="_blank" rel="noopener">BVC Importaciones</a>
+</div>
+</div>
 </nav>
-<a class="btn btn-cinta" href="#contacto">Contacto</a>
-</div>
-</header>
+
 <main id="inicio">
-<div class="fondo" aria-hidden="true"></div>
-<section class="portada-hero" id="portada">
-<div class="wrap portada-inner">
-<h1 class="sr-only">BVC Inversiones</h1>
-<p class="eyebrow">Grupo de inversión · Cochabamba, Bolivia</p>
-<p class="portada-lead">Desarrollo inmobiliario, construcción e importación bajo una misma dirección.</p>
-<a class="bajar" href="#estructura"><span>Conocer el grupo</span><i aria-hidden="true"></i></a>
-</div>
-</section>
-<section class="panel" id="estructura">
+<section class="hero">
 <div class="wrap">
-<div class="rama-head centro reveal">
-<p class="eyebrow">Estructura del grupo</p>
-<h2>Una sola dirección, tres ramas</h2>
-<p>BVC Inversiones es el grupo fundado por el Ing. Cesar Barrera, su dueño e inversionista principal. Desde aquí se invierte, se dirige y nacen nuestras tres empresas.</p>
+<div class="hero-texto rv">
+<h1 class="kicker" style="margin-bottom:14px">BVC Inversiones</h1>
+<p>Invertimos, desarrollamos y construimos nuestros propios proyectos en Cochabamba. Bajo una misma dirección trabajan <b>Desarrollo Inmobiliario BVC</b>, <b>BVC Construcciones</b> y <b>BVC Importaciones</b>.</p>
+<a class="btn" href="#nosotros">Conocer más</a>
 </div>
-<div class="arbol reveal" aria-label="Estructura del grupo">
-<div class="raiz"><img src="img/logo-bvc.jpg" alt="" width="64" height="64"><b>BVC Inversiones</b></div>
-<div class="ramas">
-<a class="rama" href="#desarrollo">
-<svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="16" y="6" width="24" height="44"/><path d="M22 14h4M30 14h4M22 22h4M30 22h4M22 30h4M30 30h4M22 38h4M30 38h4M6 50h44"/></svg>
-<b>Desarrollo Inmobiliario BVC</b>
-<span>Proyectos inmobiliarios propios: del terreno a la venta.</span>
-<em>Ver rama →</em>
-</a>
-<a class="rama" href="#construcciones">
-<svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 16h44M6 30h44M6 44h44M14 10v40M42 10v40M28 16v28"/></svg>
-<b>BVC Construcciones</b>
-<span>Construcción de los proyectos del grupo, con equipo propio.</span>
-<em>Ver rama →</em>
-</a>
-<a class="rama" href="#importaciones">
-<svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="6" y="18" width="30" height="22"/><path d="M36 24h8l6 8v8H36M14 44a4 4 0 1 0 0 .1M42 44a4 4 0 1 0 0 .1"/></svg>
-<b>BVC Importaciones</b>
-<span>Importación directa para el grupo: obra fina y vehículos eléctricos.</span>
-<em>Ver rama →</em>
+<a class="hero-tarjeta rv" href="#desarrollo">
+<img src="img/toscana-obra-1.jpg" alt="Vaciado de losa en Torre Toscana">
+<div><b>Torre Toscana</b><span>Ver desarrollo</span></div>
 </a>
 </div>
+</section>
+
+<section class="sec arena" id="nosotros">
+<div class="wrap desde">
+<h2 class="rv">Desde <em>2020</em></h2>
+<p class="cuerpo rv">BVC Inversiones fue fundada por el <b>Ing. Cesar Barrera</b>, su dueño e inversionista principal. Empezó desarrollando y construyendo <b>casas propias para la venta</b> y hoy desarrolla <b>edificios de departamentos</b> en las mejores zonas de Cochabamba, los construye con su propia constructora e importa los materiales de obra fina que usa en ellos.</p>
+<a class="btn rv" href="#empresas">Nuestras empresas</a>
+<div class="declaracion rv"><p>Invertimos en el terreno, desarrollamos el proyecto, lo construimos y lo llevamos a la venta. Cada obra BVC es nuestra, de principio a fin.</p></div>
+<div class="iconos rv">
+<div><svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="16" y="6" width="24" height="44"/><path d="M22 14h4M30 14h4M22 22h4M30 22h4M22 30h4M30 30h4M22 38h4M30 38h4M6 50h44"/></svg>Desarrollos<br>verticales</div>
+<div><svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="6" y="20" width="18" height="30"/><rect x="32" y="20" width="18" height="30"/><path d="M6 20l9-10 9 10M32 20l9-10 9 10M4 50h48"/></svg>Condominios</div>
+<div><svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 26L28 10l20 16M12 24v26h32V24M24 50V36h8v14"/></svg>Viviendas</div>
+<div><svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 46h44M10 46V20h36v26M10 28h36M18 20v26M38 20v26M28 8v12"/></svg>Obra fina</div>
+<div><svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 36l5-12h30l5 12v8H8z"/><circle cx="17" cy="44" r="4"/><circle cx="39" cy="44" r="4"/><path d="M29 14l-5 8h6l-4 7"/></svg>Vehículos<br>eléctricos</div>
+</div>
 </div>
 </section>
-<section class="panel" id="grupo">
-<div class="reveal wrap historia">
-<div class="anio"><small>Desde</small>2020</div>
-<div class="about-body">
-<p class="eyebrow">El grupo</p>
-<p class="about-quote">Un grupo de inversión <span>con empresas propias.</span></p>
-<p>BVC Inversiones nació hace seis años desarrollando y construyendo casas propias para la venta. Con el tiempo el grupo creció en ramas: hoy desarrolla edificios de departamentos, los construye con su propia constructora e importa materiales y vehículos.</p>
-<p>Cada rama trabaja bajo la misma dirección y con la inversión del grupo. Por eso controlamos la calidad, el costo y el plazo de todo lo que hacemos.</p>
-<div class="valores">
-<div><h3>Responsabilidad</h3><p>Cumplimos plazos y lo que firmamos.</p></div>
-<div><h3>Calidad</h3><p>Hacemos cada proyecto como si fuera para nosotros, porque lo es.</p></div>
-<div><h3>Transparencia</h3><p>Obras abiertas a visitas y avance publicado.</p></div>
-</div>
-</div>
-</div>
-</section>
-<div class="ventana" aria-hidden="true"></div>
-<section class="panel rama-sec" id="desarrollo">
+
+<section class="sec negro" id="empresas">
 <div class="wrap">
-<div class="reveal rama-head">
-<p class="eyebrow">Rama de BVC Inversiones</p>
-<h2>Desarrollo Inmobiliario BVC</h2>
-<p>Invertimos en el terreno, diseñamos el proyecto y lo llevamos a la venta, directa y con inmobiliarias asociadas. Todos nuestros desarrollos son propios.</p>
+<div class="centro">
+<h2 class="titulo rv">Nuestras empresas</h2>
+<p class="kicker rv" style="margin-top:20px">Tres ramas · una dirección</p>
+<p class="intro rv">Desde BVC Inversiones se invierte y se dirige. De ahí nacen tres empresas, cada una dedicada a una parte de nuestros proyectos.</p>
 </div>
-<article class="reveal dev-feature">
-<div class="dev-img">
-<span class="dev-tag">En construcción · Losa 10</span>
-<svg viewBox="0 0 300 520" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
-<rect width="300" height="520" fill="var(--acero)"/>
-<rect x="80" y="60" width="140" height="440" fill="var(--acero-2)" stroke="var(--sobre-acero)" stroke-opacity=".5"/>
-<g fill="var(--cinta)" opacity=".85">
-<rect x="92" y="78" width="30" height="26"/><rect x="135" y="78" width="30" height="26"/><rect x="178" y="78" width="30" height="26"/>
-<rect x="92" y="122" width="30" height="26"/><rect x="178" y="122" width="30" height="26"/>
-<rect x="135" y="166" width="30" height="26"/><rect x="178" y="166" width="30" height="26"/>
-<rect x="92" y="210" width="30" height="26"/><rect x="135" y="210" width="30" height="26"/>
-<rect x="92" y="254" width="30" height="26"/><rect x="178" y="254" width="30" height="26"/>
-<rect x="135" y="298" width="30" height="26"/><rect x="178" y="298" width="30" height="26"/>
-<rect x="92" y="342" width="30" height="26"/><rect x="135" y="342" width="30" height="26"/>
-<rect x="92" y="386" width="30" height="26"/><rect x="178" y="386" width="30" height="26"/>
-</g>
-<rect x="60" y="500" width="180" height="2" fill="var(--sobre-acero)"/>
-</svg>
-<img src="https://torre-toscana.com/img/portada-edificio.jpg" alt="Fachada de Torre Toscana, edificio de 10 pisos en Zona Norte, Cochabamba" loading="lazy" onerror="this.remove()">
+<div class="empresas">
+<a class="empresa rv" href="#desarrollo"><img src="img/casa-fachada.jpg" alt="" loading="lazy"><span class="kicker">Rama 01</span><h3>Desarrollo Inmobiliario BVC</h3><p>Elegimos el terreno, diseñamos el producto y llevamos cada proyecto propio hasta la entrega de llaves.</p><span class="mas">Ver desarrollos →</span></a>
+<a class="empresa rv" href="#construcciones"><img src="img/toscana-obra-3.jpg" alt="" loading="lazy"><span class="kicker">Rama 02</span><h3>BVC Construcciones</h3><p>Construimos nuestros propios desarrollos con equipo propio y supervisión de ingeniería en cada losa.</p><span class="mas">Ver obras →</span></a>
+<a class="empresa rv" href="#importaciones"><img src="img/card-importaciones.jpg" alt="" loading="lazy"><span class="kicker">Rama 03</span><h3>BVC Importaciones</h3><p>Importación directa, para uso propio, de materiales de obra fina y vehículos eléctricos 0 km.</p><span class="mas">Ver importaciones →</span></a>
 </div>
-<div class="dev-body">
-<div>
-<p class="eyebrow">Zona Norte · Cochabamba</p>
-<h3 style="margin-top:12px">Torre Toscana</h3>
-<p class="dev-loc" style="margin-top:10px">Calle Hermógenes Sejas esq. Bernardo Monteagudo · a pasos del Parque del Arquitecto</p>
 </div>
-<div class="fichas">
-<div><b>10</b><span>Pisos</span></div>
-<div><b>24</b><span>Departamentos</span></div>
-<div><b>35 m²</b><span>Desde</span></div>
-<div><b>20%</b><span>Para entrar</span></div>
+</section>
+
+<section class="sec negro" id="desarrollo" style="border-top:1px solid #1e1a15">
+<div class="wrap">
+<div class="centro">
+<p class="kicker rv">Desarrollo Inmobiliario BVC</p>
+<h2 class="titulo rv" style="margin-top:18px">Nuestros desarrollos</h2>
+<p class="intro rv">Proyectos propios para vivir o para invertir y alquilar. Compras sobre una obra real que puedes visitar.</p>
 </div>
-<ul class="dev-list">
-<li>Departamentos de 1 y 2 dormitorios</li>
-<li>Solo 3 departamentos por piso</li>
-<li>Cocina Hisense incluida</li>
-<li>Piscina, churrasquero y terraza</li>
-<li>Ascensor para 8 personas</li>
-<li>Parqueos y bauleras privadas</li>
-</ul>
-<div class="avance">
-<div class="avance-top"><span>Avance de estructura</span><span>Losa 10 vaciada · entrega abril 2027</span></div>
-<div class="losas" aria-label="10 de 11 niveles vaciados"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="p"></i></div>
-</div>
-<div class="dev-cta">
-<a class="btn btn-cinta" href="https://torre-toscana.com" target="_blank" rel="noopener">Visitar torre-toscana.com →</a>
-</div>
+<article class="dev rv">
+<div class="dev-foto"><span class="etiqueta">En construcción · Losa 10</span><img src="https://torre-toscana.com/img/portada-edificio.jpg" alt="Fachada de Torre Toscana, edificio de 10 pisos" loading="lazy" onerror="this.src='img/toscana-obra-1.jpg'"></div>
+<div class="dev-info">
+<p class="kicker">Zona Norte · Cochabamba</p>
+<h3>Torre Toscana</h3>
+<p class="lugar">Calle Hermógenes Sejas esq. Bernardo Monteagudo, a pasos del Parque del Arquitecto.</p>
+<div class="cifras"><div><b>10</b><span>Pisos</span></div><div><b>24</b><span>Deptos.</span></div><div><b>35 m²</b><span>Desde</span></div><div><b>2027</b><span>Entrega</span></div></div>
+<ul class="lista"><li>Departamentos de 1 y 2 dormitorios</li><li>Solo 3 departamentos por piso</li><li>Cocina Hisense incluida</li><li>Piscina, churrasquero y terraza</li><li>Ascensor para 8 personas</li><li>Parqueos y bauleras privadas</li></ul>
+<div class="avance"><div class="avance-t"><span>Avance de estructura</span><span>Losa 10 vaciada · entrega abril 2027</span></div><div class="losas" aria-label="10 de 11 niveles vaciados"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="p"></i></div></div>
+<a class="btn claro" href="https://torre-toscana.com" target="_blank" rel="noopener">torre-toscana.com →</a>
 </div>
 </article>
-<div class="reveal otros">
-<article class="otro">
-<div class="otro-plan">
-<svg viewBox="0 0 150 150" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-<rect x="6" y="20" width="62" height="110"/><rect x="82" y="20" width="62" height="110"/>
-<line x1="37" y1="20" x2="37" y2="130" stroke-dasharray="4 4"/><line x1="113" y1="20" x2="113" y2="130" stroke-dasharray="4 4"/>
-<rect x="29" y="64" width="16" height="22" fill="var(--cinta)" stroke="none"/><rect x="105" y="64" width="16" height="22" fill="var(--cinta)" stroke="none"/>
-<text x="30" y="14" font-family="IBM Plex Mono, monospace" font-size="11" fill="currentColor" stroke="none">A</text>
-<text x="106" y="14" font-family="IBM Plex Mono, monospace" font-size="11" fill="currentColor" stroke="none">B</text>
-</svg>
-</div>
-<div class="otro-body">
-<span class="estado">En desarrollo</span>
-<h3>Condominio Bloques A y B</h3>
-<p>Condominio residencial de dos bloques con departamentos amplios para familias.</p>
-<ul><li>Dos departamentos espejo de 100 m² por piso</li><li>3 dormitorios por departamento</li><li>Núcleo de gradas por bloque</li></ul>
-</div>
+<div class="duo">
+<article class="mini rv">
+<div class="mini-foto"><svg viewBox="0 0 150 150" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="6" y="20" width="62" height="110"/><rect x="82" y="20" width="62" height="110"/><line x1="37" y1="20" x2="37" y2="130" stroke-dasharray="4 4"/><line x1="113" y1="20" x2="113" y2="130" stroke-dasharray="4 4"/></svg></div>
+<div class="mini-info"><span class="estado">En desarrollo</span><h3>Condominio Bloques A y B</h3><p>Dos bloques con departamentos espejo de 100 m² y 3 dormitorios, pensados para familias.</p></div>
 </article>
-<article class="otro">
-<div class="otro-plan foto"><img src="img/casa-fachada.jpg" alt="Fachada de una vivienda BVC" loading="lazy"></div>
-<div class="otro-body">
-<span class="estado">Entregado</span>
-<h3>Viviendas BVC</h3>
-<p>Nuestras primeras obras: casas que desarrollamos y construimos nosotros mismos para la venta. Con ellas empezó el grupo hace seis años.</p>
-<ul><li>Desarrollo y construcción propios</li><li>Vendidas y entregadas a sus familias</li></ul>
-</div>
+<article class="mini rv">
+<div class="mini-foto"><img src="img/casa-jardin.jpg" alt="Jardín de vivienda BVC" loading="lazy"></div>
+<div class="mini-info"><span class="estado">Entregado</span><h3>Viviendas BVC</h3><p>Nuestras primeras obras: casas desarrolladas y construidas por nosotros para la venta, entregadas a sus familias.</p></div>
 </article>
 </div>
-<div class="galeria-head"><p class="eyebrow">Viviendas BVC · imágenes del proyecto</p></div>
-<div class="reveal galeria g4">
-<img src="img/casa-fachada.jpg" alt="Fachada de vivienda BVC" loading="lazy">
-<img src="img/casa-jardin.jpg" alt="Jardín y churrasquero de vivienda BVC" loading="lazy">
-<img src="img/casa-living.jpg" alt="Living con escalera de vivienda BVC" loading="lazy">
-<img src="img/casa-cocina.jpg" alt="Cocina y comedor de vivienda BVC" loading="lazy">
+<div class="galeria rv">
+<figure><img src="img/casa-fachada.jpg" alt="Fachada de vivienda BVC" loading="lazy"></figure>
+<figure><img src="img/casa-jardin.jpg" alt="Jardín y churrasquero de vivienda BVC" loading="lazy"></figure>
+<figure><img src="img/casa-living.jpg" alt="Living de vivienda BVC" loading="lazy"></figure>
+<figure><img src="img/casa-cocina.jpg" alt="Cocina de vivienda BVC" loading="lazy"></figure>
 </div>
-<div class="reveal ventajas" style="margin-top:56px">
-<div class="ventaja"><h3>Obra real</h3><p>Compras sobre una obra en marcha que puedes visitar cuando quieras.</p></div>
-<div class="ventaja"><h3>Precio directo</h3><p>El desarrollador es el constructor: sin intermediarios en la obra.</p></div>
-<div class="ventaja"><h3>Plan de pagos propio</h3><p>Reserva, entrada desde el 20% y saldo contra entrega o crédito directo.</p></div>
-<div class="ventaja"><h3>Para vivir o alquilar</h3><p>Ubicaciones elegidas para que tu departamento se valorice y se alquile fácil.</p></div>
+<div class="ventajas">
+<div class="ventaja rv"><h3>Obra real</h3><p>Compras sobre una obra en marcha que puedes visitar.</p></div>
+<div class="ventaja rv"><h3>Precio directo</h3><p>El desarrollador es el constructor: sin intermediarios en la obra.</p></div>
+<div class="ventaja rv"><h3>Plan de pagos propio</h3><p>Reserva, entrada desde el 20% y saldo contra entrega o crédito directo.</p></div>
+<div class="ventaja rv"><h3>Vivir o alquilar</h3><p>Ubicaciones elegidas para valorizarse y alquilarse fácil.</p></div>
 </div>
 </div>
 </section>
-<section class="panel alt rama-sec" id="construcciones">
+
+<section class="ventana" aria-label="Lema">
 <div class="wrap">
-<div class="reveal rama-head">
-<p class="eyebrow">Rama de BVC Inversiones</p>
-<h2>BVC Construcciones</h2>
-<p>La constructora del grupo. Construye los proyectos que desarrolla BVC Inversiones, con equipo propio y supervisión de ingeniería en cada etapa.</p>
-</div>
-<div class="reveal tipos t3">
-<div class="tipo">
-<svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2"><rect x="16" y="6" width="24" height="44"/><path d="M22 14h4M30 14h4M22 22h4M30 22h4M22 30h4M30 30h4M22 38h4M30 38h4M6 50h44"/></svg>
-<h3>Edificios</h3><p>Desarrollos verticales en zonas residenciales consolidadas, con áreas sociales en el último piso.</p>
-</div>
-<div class="tipo">
-<svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="20" width="18" height="30"/><rect x="32" y="20" width="18" height="30"/><path d="M6 20l9-10 9 10M32 20l9-10 9 10M4 50h48"/></svg>
-<h3>Condominios</h3><p>Bloques residenciales con departamentos amplios para familias.</p>
-</div>
-<div class="tipo">
-<svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 26L28 10l20 16M12 24v26h32V24M24 50V36h8v14"/></svg>
-<h3>Viviendas</h3><p>Casas construidas para la venta, como las primeras obras del grupo.</p>
-</div>
-</div>
-<div class="galeria-head"><p class="eyebrow">En obra · Torre Toscana</p></div>
-<div class="reveal galeria g4 alta">
-<img src="img/toscana-obra-1.jpg" alt="Vaciado de losa con bomba de hormigón en Torre Toscana" loading="lazy">
-<img src="img/toscana-obra-2.jpg" alt="Equipo de BVC Construcciones en el vaciado de losa" loading="lazy">
-<img src="img/toscana-obra-3.jpg" alt="Losa alivianada lista para vaciado" loading="lazy">
-<img src="img/toscana-obra-4.jpg" alt="Armado de fundaciones de Torre Toscana" loading="lazy">
-</div>
-<div class="chips claro"><span>Estructuras de hormigón armado</span><span>Obra fina y acabados</span><span>Instalaciones eléctricas, sanitarias y de gas</span><span>Piscinas y terrazas</span></div>
+<div class="comillas rv" aria-hidden="true">“</div>
+<blockquote class="rv">Proyectos extraordinarios que se distinguen por ser agresivamente diferenciados y de profundo valor.</blockquote>
+<cite class="rv">BVC Inversiones</cite>
 </div>
 </section>
-<section class="panel rama-sec" id="importaciones">
+
+<section class="sec arena" id="construcciones">
 <div class="wrap">
-<div class="reveal rama-head">
-<p class="eyebrow">Rama de BVC Inversiones</p>
-<h2>BVC Importaciones</h2>
-<p>Importamos directamente, para uso propio del grupo, materiales de obra fina para nuestras obras y vehículos eléctricos 0 km. No es una línea de venta al público.</p>
+<div class="centro">
+<p class="kicker rv">BVC Construcciones</p>
+<h2 class="titulo rv" style="margin-top:18px">Construimos lo nuestro</h2>
+<p class="intro rv">La constructora de BVC Inversiones. Construye solo nuestros propios desarrollos, con equipo propio y supervisión de ingeniería en cada etapa.</p>
 </div>
-<div class="reveal imp-grid">
-<article class="imp">
-<span class="mono">Obra fina</span>
-<h3>Materiales de construcción</h3>
-<p>Los acabados que instalamos en nuestros propios desarrollos, importados de fábrica.</p>
-<div class="chips"><span>Pisos</span><span>Revestimientos</span><span>Griferías</span><span>Puertas</span><span>Chapas</span><span>Artefactos eléctricos</span></div>
-</article>
-<article class="imp">
-<span class="mono">Movilidad eléctrica</span>
-<h3>Vehículos eléctricos 0 km</h3>
-<p>Vehículos eléctricos nuevos, importados directamente para uso del grupo.</p>
-<div class="chips"><span>0 km</span><span>100% eléctricos</span><span>Uso propio</span></div>
-</article>
+<div class="capas rv">
+<div class="capa"><svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 16h44M6 30h44M6 44h44M14 10v40M42 10v40M28 16v28"/></svg><h3>Estructura</h3><p>Hormigón armado: cimientos, columnas y losas.</p></div>
+<div class="capa"><svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10 46V12h36v34M10 24h36M22 12v34M34 24v22"/></svg><h3>Obra fina</h3><p>Pisos, revestimientos, carpintería y acabados.</p></div>
+<div class="capa"><svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M30 6L16 30h12l-4 20 18-28H30z"/></svg><h3>Instalaciones</h3><p>Eléctricas, sanitarias y de gas.</p></div>
+<div class="capa"><svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 40c6-4 10 4 16 0s10 4 16 0 10 4 12 0M10 20h36v14H10zM16 20v-8h24v8"/></svg><h3>Áreas sociales</h3><p>Piscinas y terrazas con impermeabilización Sika.</p></div>
+</div>
+<p class="galeria-t rv">En obra · Torre Toscana</p>
+<div class="galeria alta rv" style="margin-top:16px">
+<figure><img src="img/toscana-obra-1.jpg" alt="Vaciado de losa con bomba de hormigón" loading="lazy"></figure>
+<figure><img src="img/toscana-obra-2.jpg" alt="Equipo de BVC Construcciones en el vaciado" loading="lazy"></figure>
+<figure><img src="img/toscana-obra-3.jpg" alt="Losa alivianada lista para el vaciado" loading="lazy"></figure>
+<figure><img src="img/toscana-obra-4.jpg" alt="Armado de fundaciones" loading="lazy"></figure>
 </div>
 </div>
 </section>
-<div class="marcas panel alt">
+
+<section class="sec negro" id="importaciones">
 <div class="wrap">
-<p class="eyebrow">Marcas en nuestras obras</p>
-<div class="marcas-row" aria-label="Marcas">
-<span>Hisense</span><span>FV</span><span>Tigre</span><span>Tramontina</span><span>Celite</span><span>Sika</span>
+<div class="centro">
+<p class="kicker rv">BVC Importaciones</p>
+<h2 class="titulo rv" style="margin-top:18px">Importación directa</h2>
+<p class="intro rv">Importamos directamente de fábrica, para uso propio, los materiales de obra fina de nuestros desarrollos y vehículos eléctricos 0 km. No es una línea de venta al público.</p>
 </div>
-</div>
-</div>
-<section class="cita ventana-cita">
-<div class="wrap">
-<blockquote class="reveal">Proyectos extraordinarios que se distinguen por ser agresivamente diferenciados y de profundo valor.</blockquote>
-<cite>BVC Inversiones · Cochabamba, Bolivia</cite>
-</div>
-</section>
-<section class="panel acero contacto" id="contacto">
-<div class="wrap contacto-grid">
-<div>
-<p class="eyebrow">Contacto</p>
-<h2 style="margin-top:14px">Dónde encontrarnos</h2>
-<p class="lead">BVC Inversiones tiene su oficina en Cochabamba. Para información sobre el grupo y sus desarrollos, puedes escribirnos por correo o seguirnos en Facebook.</p>
-</div>
-<div class="datos">
-<div class="dato"><span class="mono">Correo</span><span class="v">info@cbarrera.com</span></div>
-<div class="dato"><span class="mono">Oficina</span><span class="v">Cochabamba, zona La Recoleta</span></div>
-<div class="dato"><span class="mono">Facebook</span><span class="v fb"><a href="https://www.facebook.com/ingcebarrera/" target="_blank" rel="noopener">Cesar Barrera</a><a href="https://www.facebook.com/barreravconstrucciones" target="_blank" rel="noopener">BVC Construcciones</a><a href="https://www.facebook.com/cbarreraimport/" target="_blank" rel="noopener">BVC Importaciones</a></span></div>
+<div class="lineas">
+<article class="linea rv"><svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 46h44M10 46V20h36v26M10 28h36M18 20v26M38 20v26"/></svg><h3>Materiales de obra fina</h3><p>Los acabados que instalamos en nuestros propios edificios y casas.</p><div class="chips"><span>Pisos</span><span>Revestimientos</span><span>Griferías</span><span>Puertas</span><span>Chapas</span><span>Artefactos eléctricos</span></div></article>
+<article class="linea rv"><svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 36l5-12h30l5 12v8H8z"/><circle cx="17" cy="44" r="4"/><circle cx="39" cy="44" r="4"/><path d="M29 10l-5 8h6l-4 7"/></svg><h3>Vehículos eléctricos 0 km</h3><p>Movilidad eléctrica nueva, importada directamente para uso propio.</p><div class="chips"><span>0 km</span><span>100% eléctricos</span><span>Uso propio</span></div></article>
 </div>
 </div>
 </section>
+
+<div class="marcas" aria-label="Marcas en nuestras obras">
+<span class="kicker">Marcas en nuestras obras</span>
+<div class="cinta" aria-hidden="true"><span>Hisense</span><span>FV</span><span>Tigre</span><span>Tramontina</span><span>Celite</span><span>Sika</span><span>Hisense</span><span>FV</span><span>Tigre</span><span>Tramontina</span><span>Celite</span><span>Sika</span></div>
+</div>
 </main>
-<footer>
-<div class="wrap foot">
-<span>© 2026 BVC Inversiones · Desarrollo Inmobiliario BVC · BVC Construcciones · BVC Importaciones</span>
-<span style="display:flex;gap:22px"><a href="#desarrollo">Desarrollo</a><a href="#construcciones">Construcciones</a><a href="#importaciones">Importaciones</a></span>
+
+<footer class="pie" id="contacto">
+<div class="wrap">
+<div class="pie-grid">
+<div><img src="img/logo-bvc.jpg" alt="BVC" width="92" height="92"><p class="lema">Desarrollo inmobiliario, construcción e importación bajo una misma dirección.</p></div>
+<div><h4>Empresas</h4><ul><li><a href="#desarrollo">Desarrollo Inmobiliario BVC</a></li><li><a href="#construcciones">BVC Construcciones</a></li><li><a href="#importaciones">BVC Importaciones</a></li><li><a href="https://torre-toscana.com" target="_blank" rel="noopener">Torre Toscana</a></li></ul></div>
+<div><h4>Contacto</h4><ul><li>info@cbarrera.com</li><li>Cochabamba, zona La Recoleta</li></ul></div>
+<div><h4>Facebook</h4><ul><li><a href="https://www.facebook.com/ingcebarrera/" target="_blank" rel="noopener">Cesar Barrera</a></li><li><a href="https://www.facebook.com/barreravconstrucciones" target="_blank" rel="noopener">BVC Construcciones</a></li><li><a href="https://www.facebook.com/cbarreraimport/" target="_blank" rel="noopener">BVC Importaciones</a></li></ul></div>
+</div>
+<div class="pie-base"><span>© 2026 BVC Inversiones · Cochabamba, Bolivia</span><a href="#inicio">Volver arriba ↑</a></div>
 </div>
 </footer>
+
 <script>
-(function(){var h=document.querySelector('header.top');function f(){h.classList.toggle('solid',scrollY>40)}f();addEventListener('scroll',f,{passive:true});
-var els=document.querySelectorAll('.reveal');if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('visto')});return}
-var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});els.forEach(function(e){io.observe(e)});})();
+(function(){
+var d=document.documentElement,top=document.getElementById('top'),b=document.getElementById('hamb');
+function f(){top.classList.toggle('solido',scrollY>60&&!d.classList.contains('menu-abierto'))}f();addEventListener('scroll',f,{passive:true});
+function cerrar(){d.classList.remove('menu-abierto');b.setAttribute('aria-expanded','false');b.setAttribute('aria-label','Abrir menú');f()}
+b.addEventListener('click',function(){var a=d.classList.toggle('menu-abierto');b.setAttribute('aria-expanded',a);b.setAttribute('aria-label',a?'Cerrar menú':'Abrir menú');f()});
+document.querySelectorAll('.menu a[href^="#"]').forEach(function(a){a.addEventListener('click',cerrar)});
+addEventListener('keydown',function(e){if(e.key==='Escape')cerrar()});
+var els=document.querySelectorAll('.rv');
+if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('si')});return}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('si');io.unobserve(e.target)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+els.forEach(function(e){io.observe(e)});
+})();
 </script>
 </body>
 </html>
