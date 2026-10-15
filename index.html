@@ -242,25 +242,6 @@ h1,h2,h3{margin:0;font-family:var(--f-titulo);font-weight:300;text-transform:upp
 .js .rv{opacity:0;transform:translateY(36px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
 .js .rv.si{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}.cinta{animation:none}html{scroll-behavior:auto}}
-
-.modelos-t{margin-top:72px;display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;border-bottom:1px solid #2a241c;padding-bottom:18px}
-.modelos-t h3{font-size:clamp(1.3rem,2.4vw,1.8rem)}
-.marcas-auto{display:flex;gap:26px;flex-wrap:wrap;font-family:var(--f-titulo);font-weight:300;font-size:.95rem;letter-spacing:.22em;text-transform:uppercase;color:#8f877b}
-.modelos{margin-top:26px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.modelo{margin:0;border-radius:16px;overflow:hidden;background:var(--negro-2);border:1px solid #2a241c;display:flex;flex-direction:column}
-.modelo-foto{overflow:hidden;aspect-ratio:4/3;background:#0d0b09}
-.modelo-foto img{width:100%;height:100%;object-fit:cover;filter:saturate(.9) contrast(1.03);transition:transform .9s}
-.modelo:hover .modelo-foto img{transform:scale(1.04)}
-.modelo figcaption{padding:22px 24px 26px;display:flex;flex-direction:column;gap:12px}
-.modelo .tipo-m{font-family:var(--f-titulo);font-size:.55rem;letter-spacing:.22em;text-transform:uppercase;color:var(--oro)}
-.modelo h4{margin:0;font-family:var(--f-titulo);font-weight:300;font-size:1.15rem;text-transform:uppercase;line-height:1.2}
-.ficha{list-style:none;margin:4px 0 0;padding:0;display:flex;flex-direction:column;gap:7px;font-size:.94rem;color:#cfc7ba}
-.ficha li{display:flex;justify-content:space-between;gap:14px;border-bottom:1px dashed #2f2820;padding-bottom:6px}
-.ficha li span:first-child{color:#8f877b}
-.ficha li span:last-child{text-align:right}
-.modelos-nota{margin-top:18px;font-size:.88rem;color:#8f877b}
-@media (max-width:900px){.modelos{grid-template-columns:1fr 1fr}}
-@media (max-width:600px){.modelos{grid-template-columns:1fr}}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -427,13 +408,6 @@ h1,h2,h3{margin:0;font-family:var(--f-titulo);font-weight:300;text-transform:upp
 <article class="linea rv"><svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 46h44M10 46V20h36v26M10 28h36M18 20v26M38 20v26"/></svg><h3>Materiales de obra fina</h3><p>Los acabados que instalamos en los edificios y casas que desarrollamos.</p><div class="chips"><span>Pisos</span><span>Revestimientos</span><span>Griferías</span><span>Puertas</span><span>Chapas</span><span>Artefactos eléctricos</span></div></article>
 <article class="linea rv"><svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 36l5-12h30l5 12v8H8z"/><circle cx="17" cy="44" r="4"/><circle cx="39" cy="44" r="4"/><path d="M29 10l-5 8h6l-4 7"/></svg><h3>Vehículos eléctricos e híbridos 0 km</h3><p>Importamos y vendemos directamente al público vehículos nuevos de marcas reconocidas, 100% eléctricos e híbridos.</p><div class="chips"><span>BYD</span><span>Toyota</span><span>Nissan</span><span>GAC</span><span>0 km</span><span>100% eléctricos</span><span>Híbridos</span><span>Venta directa</span></div></article>
 </div>
-<div class="modelos-t rv"><h3>Modelos que importamos</h3><div class="marcas-auto" aria-label="Marcas"><span>BYD</span><span>Toyota</span><span>Nissan</span><span>GAC</span></div></div>
-<div class="modelos">
-<figure class="modelo rv"><div class="modelo-foto"><img src="img/auto-byd-yuan-up.jpg" alt="BYD Yuan Up Pro blanco" loading="lazy"></div><figcaption><span class="tipo-m">100% eléctrico</span><h4>BYD Yuan Up Pro</h4><ul class="ficha"><li><span>Potencia</span><span>143 kW</span></li><li><span>Autonomía</span><span>420 km</span></li><li><span>Carga</span><span>Cargador rápido 7 kW</span></li><li><span>Asistencia</span><span>Cámaras y sensores 360°</span></li></ul></figcaption></figure>
-<figure class="modelo rv"><div class="modelo-foto"><img src="img/auto-rav4-hibrida.jpg" alt="Toyota RAV4 Híbrida blanca" loading="lazy"></div><figcaption><span class="tipo-m">Híbrido autorrecargable</span><h4>Toyota RAV4 Hybrid</h4><ul class="ficha"><li><span>Motorización</span><span>2.5 L + motor eléctrico</span></li><li><span>Tracción</span><span>4x4</span></li><li><span>Transmisión</span><span>Automática secuencial</span></li><li><span>Seguridad</span><span>Toyota Safety Sense</span></li></ul></figcaption></figure>
-<figure class="modelo rv"><div class="modelo-foto"><img src="img/auto-tundra-hibrida.jpg" alt="Toyota Tundra Híbrida blanca" loading="lazy"></div><figcaption><span class="tipo-m">Híbrido autorrecargable</span><h4>Toyota Tundra i-FORCE MAX</h4><ul class="ficha"><li><span>Motorización</span><span>V6 3.5 L biturbo + eléctrico</span></li><li><span>Tracción</span><span>4x4</span></li><li><span>Versión</span><span>Platinum, doble cabina</span></li><li><span>Asistencia</span><span>Cámaras y sensores 360°</span></li></ul></figcaption></figure>
-</div>
-<p class="modelos-nota rv">Fotografías de unidades reales importadas por BVC Importaciones.</p>
 </div>
 </section>
 
